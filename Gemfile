@@ -31,3 +31,7 @@ end
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
 end
+
+group :development do
+  gem 'mina'
+end
