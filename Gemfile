@@ -11,6 +11,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'puma'
 gem 'haml'
 
+gem 'rails_admin'
+gem 'devise'
+gem 'friendly_id'
+gem 'simple_form'
+
+gem 'sitemap_generator'
 gem 'meta-tags', :require => 'meta_tags'
 
 group :development, :test do
@@ -20,12 +26,21 @@ group :development, :test do
   gem 'haml-rails'
   gem 'rspec-rails'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'shoulda', '>=3.1.1'
+  gem 'capybara', '~> 2.4.1'
   gem 'database_cleaner'
   gem 'rack-livereload'
   gem 'guard-livereload'
   gem 'guard-puma'
   gem 'guard-bundler'
   gem 'guard-rspec'
+  gem 'launchy'
+  gem 'simplecov', :require => false
+  gem 'growl'
+  gem 'libnotify'
+  gem 'rb-inotify', :require => false
+  gem 'rb-fsevent', :require => false
+  gem 'shoulda-matchers'
 end
 
 source 'https://rails-assets.org' do
@@ -34,4 +49,7 @@ end
 
 group :development do
   gem 'mina'
+  gem 'quiet_assets'
+  gem 'spring-commands-rspec'
+  gem 'annotate', '~> 2.6.6'
 end
