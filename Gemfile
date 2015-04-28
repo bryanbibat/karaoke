@@ -19,6 +19,8 @@ gem 'simple_form'
 gem 'sitemap_generator'
 gem 'meta-tags', :require => 'meta_tags'
 
+gem 'leaflet-rails'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

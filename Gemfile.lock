@@ -152,6 +152,7 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
+    leaflet-rails (0.7.4)
     libnotify (0.9.1)
       ffi (>= 1.0.11)
     listen (2.10.0)
@@ -348,6 +349,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
+  leaflet-rails
   libnotify
   meta-tags
   mina
