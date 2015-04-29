@@ -11,7 +11,8 @@ RSpec.describe KaraokePlacesController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      get :show
+      bar = FactoryGirl.create(:karaoke_place)
+      get :show, id: bar.slug
       expect(response).to have_http_status(:success)
     end
   end
