@@ -6,9 +6,9 @@
 
 - if @bar.karaoke_machine.present?
   %p
-    This place uses a
+    This place uses
     = link_to @bar.karaoke_machine.name, @bar.karaoke_machine
-    karaoke machine.
+    karaoke machines.
 - content_for :scripts do
   :javascript
     var data = JSON.parse("#{escape_javascript @bar.to_json(only: [:name, :latitude, :longitude, :slug])}")
