@@ -10,6 +10,7 @@
 #  longitude          :decimal(9, 6)
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  slug               :string
 #
 
 class KaraokePlace < ActiveRecord::Base
