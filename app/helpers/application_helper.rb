@@ -1,6 +1,6 @@
 module ApplicationHelper
   def build_meta_tags(description: "Description", title: nil, image: url_to_image("opengraph.png"), page_type: :website)
-    main_title = "Karaoke Helper"
+    main_title = "Karaoke"
     set_meta_tags(:title => title,
                   :description => description,
                   :open_graph => {
@@ -14,9 +14,9 @@ module ApplicationHelper
 
   def display_karaoke_machine(bar)
     if bar.karaoke_machine.present?
-      bar.karaoke_machine.name
+      link_to bar.karaoke_machine.name, bar.karaoke_machine
     else
-      "unknown"
+      content_tag "em", "unknown"
     end
   end
 end

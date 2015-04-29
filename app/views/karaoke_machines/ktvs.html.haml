@@ -1,0 +1,10 @@
+%h1
+  = link_to @device.name, @device
+  KTVs
+
+%table.table.table-striped
+  %tr
+    %th KTV
+  - @device.karaoke_places.each do |bar|
+    %tr
+      %td= link_to bar.name, bar

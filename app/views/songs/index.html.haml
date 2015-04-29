@@ -1,0 +1,13 @@
+%h1 Songs
+%table.table.table-striped
+  %tr
+    %th Name
+    %th Original Name
+    %th Artist
+    %th Release Date
+  - @songs.each do |song|
+    %tr
+      %td= link_to song.name, song
+      %td= song.original_name
+      %td= link_to song.artist.name, song.artist
+      %td= song.released_at

@@ -4,4 +4,12 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   resources 'karaoke_places'
+  resources 'karaoke_machines' do 
+    member do
+      get 'ktvs'
+      get 'songs'
+    end
+  end
+  resources 'artists'
+  resources 'songs'
 end

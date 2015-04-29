@@ -1,0 +1,17 @@
+%h1
+  = link_to @device.name, @device
+  Songs
+
+%table.table.table-striped
+  %tr
+    %th Key
+    %th Song
+    %th Artist
+  - @device.karaoke_songs.sort_by { |s| s.song.name }.each do |entry|
+    %tr
+      %td= entry.key
+      %td
+        = link_to entry.song.name, entry.song
+        - if entry.song.original_name.present?
+          = "(#{entry.song.original_name})"
+      %td= link_to entry.song.artist.name, entry.song.artist

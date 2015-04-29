@@ -1,0 +1,8 @@
+%h1 Artists
+
+%table.table.table-striped
+  %tr
+    %th Name
+  - @artists.each do |artist|
+    %tr
+      %td= link_to artist.name, artist

@@ -13,7 +13,7 @@
 FactoryGirl.define do
   factory :karaoke_machine do
     name "MyString"
-description "MyText"
+    description "MyText"
   end
 
 end

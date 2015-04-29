@@ -1,0 +1,12 @@
+%h1= @song.name
+
+%h2 Karaoke Keys
+%table.table.table-striped
+  %tr
+    %th Key
+    %th Machine
+  - @song.karaoke_songs.each do |entry|
+    %tr
+      %td= entry.key
+      %td= link_to entry.karaoke_machine.name, entry.karaoke_machine
+

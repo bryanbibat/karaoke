@@ -1,0 +1,14 @@
+%h1= @artist.name
+
+= @artist.bio
+
+%h2 Song List
+
+%table.table.table-striped
+  %tr
+    %th Name
+    %th Release Date
+  - @artist.songs.order(:name).each do |song|
+    %tr
+      %td= link_to song.name, song
+      %td= song.released_at

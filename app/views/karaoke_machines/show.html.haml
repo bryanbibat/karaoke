@@ -1,0 +1,5 @@
+%h1= @device.name 
+
+%p= link_to "KTVs that use this machine &raquo;".html_safe, ktvs_karaoke_machine_path(@device), class: "btn btn-default btn-lg"
+
+%p= link_to "List of songs in this machine &raquo;".html_safe, songs_karaoke_machine_path(@device), class: "btn btn-default btn-lg"

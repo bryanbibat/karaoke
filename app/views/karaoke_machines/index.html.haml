@@ -1,0 +1,8 @@
+%h1 Karaoke Machines
+
+%table.table.table-striped
+  %tr
+    %th Name
+  - @devices.each do |device|
+    %tr
+      %td= link_to device.name, device

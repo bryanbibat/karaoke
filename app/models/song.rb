@@ -16,5 +16,6 @@
 class Song < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
-  belongs_to :artist
+  belongs_to :artist, inverse_of: :songs
+  has_many :karaoke_songs, inverse_of: :song
 end
