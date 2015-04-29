@@ -3,6 +3,12 @@
 %p
   %em= @bar.address
 = raw @bar.description_html
+
+- if @bar.karaoke_machine.present?
+  %p
+    This place uses a
+    = link_to @bar.karaoke_machine.name, @bar.karaoke_machine
+    karaoke machine.
 - content_for :scripts do
   :javascript
     var data = JSON.parse("#{escape_javascript @bar.to_json(only: [:name, :latitude, :longitude, :slug])}")
