@@ -46,9 +46,6 @@ RailsAdmin.config do |config|
         hide
       end
     end
-    edit do
-      field :karaoke_machine, :belongs_to_association
-    end
   end
 
   config.model KaraokeMachine do

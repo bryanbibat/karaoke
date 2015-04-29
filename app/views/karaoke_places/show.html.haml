@@ -1,9 +1,9 @@
 #map{ style: "height: 400px" }
 %h1= @bar.name 
-%p= @bar.description 
+= raw @bar.description_html
 - content_for :scripts do
   :javascript
     var data = JSON.parse("#{escape_javascript @bar.to_json(only: [:name, :latitude, :longitude, :slug])}")
     L.marker([ data["latitude"], data["longitude"]])
       .addTo(window.Map)
-      .bindPopup(data["name"]);
+      .bindPopup("<strong>" + data["name"] + "</strong>");

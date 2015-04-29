@@ -20,6 +20,7 @@ gem 'sitemap_generator'
 gem 'meta-tags', :require => 'meta_tags'
 
 gem 'leaflet-rails'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'byebug'
