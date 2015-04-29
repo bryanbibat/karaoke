@@ -1,6 +1,9 @@
 #map{ style: "height: 400px" }
-%h1 Pages#index
-%p Find me in app/views/pages/index.html.haml
+%h1.text-center [Unnamed Karaoke App]
+%p.text-center
+  %em because karaoke is more than
+  "Let it Go"
+  %em on endless repeat
 - content_for :scripts do
   :javascript
     var data = JSON.parse("#{escape_javascript KaraokePlace.all.to_json(only: [:name, :latitude, :longitude, :slug])}")
