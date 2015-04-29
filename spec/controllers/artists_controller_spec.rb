@@ -11,7 +11,8 @@ RSpec.describe ArtistsController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      get :show
+      artist = FactoryGirl.create(:artist)
+      get :show, id: artist.slug
       expect(response).to have_http_status(:success)
     end
   end
