@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428115436) do
+ActiveRecord::Schema.define(version: 20150429055010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,14 +39,20 @@ ActiveRecord::Schema.define(version: 20150428115436) do
     t.text     "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "slug"
   end
+
+  add_index "artists", ["slug"], name: "index_artists_on_slug", unique: true, using: :btree
 
   create_table "karaoke_machines", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "slug"
   end
+
+  add_index "karaoke_machines", ["slug"], name: "index_karaoke_machines_on_slug", unique: true, using: :btree
 
   create_table "karaoke_places", force: :cascade do |t|
     t.string   "name"
@@ -56,9 +62,11 @@ ActiveRecord::Schema.define(version: 20150428115436) do
     t.decimal  "longitude",          precision: 9, scale: 6
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
+    t.string   "slug"
   end
 
   add_index "karaoke_places", ["karaoke_machine_id"], name: "index_karaoke_places_on_karaoke_machine_id", using: :btree
+  add_index "karaoke_places", ["slug"], name: "index_karaoke_places_on_slug", unique: true, using: :btree
 
   create_table "karaoke_songs", force: :cascade do |t|
     t.string   "key"
@@ -79,9 +87,11 @@ ActiveRecord::Schema.define(version: 20150428115436) do
     t.integer  "artist_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "slug"
   end
 
   add_index "songs", ["artist_id"], name: "index_songs_on_artist_id", using: :btree
+  add_index "songs", ["slug"], name: "index_songs_on_slug", unique: true, using: :btree
 
   add_foreign_key "karaoke_places", "karaoke_machines"
   add_foreign_key "karaoke_songs", "karaoke_machines"
