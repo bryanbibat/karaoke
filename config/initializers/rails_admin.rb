@@ -31,4 +31,39 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model Artist do
+    create do
+      configure :slug do
+        hide
+      end
+    end
+  end
+
+  config.model KaraokePlace do
+    create do
+      configure :slug do
+        hide
+      end
+    end
+    edit do
+      field :karaoke_machine, :belongs_to_association
+    end
+  end
+
+  config.model KaraokeMachine do
+    create do
+      configure :slug do
+        hide
+      end
+    end
+  end
+
+  config.model Song do
+    create do
+      configure :slug do
+        hide
+      end
+    end
+  end
 end

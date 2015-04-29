@@ -1,3 +1,11 @@
 #map{ style: "height: 400px" }
 %h1 Pages#index
 %p Find me in app/views/pages/index.html.haml
+- content_for :scripts do
+  :javascript
+    var data = JSON.parse("#{escape_javascript KaraokePlace.all.to_json(only: [:name, :latitude, :longitude, :slug])}")
+    for (var i = 0; i < data.length; i++) {
+      L.marker([ data[i]["latitude"], data[i]["longitude"]])
+        .addTo(window.Map)
+        .bindPopup("<a href='#{karaoke_places_url}/" + data[i]["slug"] + "'>" + data[i]["name"] + "</a>");
+    }

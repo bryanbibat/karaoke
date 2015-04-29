@@ -10,4 +10,7 @@
 #
 
 class KaraokeMachine < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+  has_many :karaoke_places, inverse_of: :karaoke_machine
 end
