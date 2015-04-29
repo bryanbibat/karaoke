@@ -18,7 +18,5 @@ class KaraokePlace < ActiveRecord::Base
   friendly_id :name, use: :slugged
   belongs_to :karaoke_machine, inverse_of: :karaoke_places 
 
-  def description_html
-    Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true).render(description)
-  end
+  include CommonMethods
 end

@@ -1,5 +1,6 @@
 class KaraokePlacesController < ApplicationController
   def index
+    @bars = KaraokePlace.order(:name)
   end
 
   def show

@@ -11,4 +11,12 @@ module ApplicationHelper
                     :image => [image, { :width => 200, :height => 200 }]
                   })
   end
+
+  def display_karaoke_machine(bar)
+    if bar.karaoke_machine.present?
+      bar.karaoke_machine.name
+    else
+      "unknown"
+    end
+  end
 end

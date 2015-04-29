@@ -22,6 +22,10 @@
             %span.icon-bar
           = link_to "Karaoke Helper", root_url, :class => "navbar-brand"
         .navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            %li{ :class => (controller_name == "pages" ? "active" : "") }= link_to "Home", root_url
+            %li{ :class => (controller_name == "karaoke_places" ? "active" : "") }= link_to "Karaoke Places", karaoke_places_url
+          
           -#- if user_signed_in?
             -#= render "layouts/logged_in"
           -#- else
