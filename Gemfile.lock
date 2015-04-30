@@ -45,6 +45,9 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-kaminari-views (0.0.5)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
@@ -333,6 +336,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (~> 2.6.6)
+  bootstrap-kaminari-views
   byebug
   capybara (~> 2.4.1)
   coffee-rails (~> 4.1.0)
@@ -349,6 +353,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   launchy
   leaflet-rails
   libnotify

@@ -1,8 +1,10 @@
 %h1 Artists
 
-%table.table.table-striped
+%table.table.table-striped.table-condensed
   %tr
     %th Name
   - @artists.each do |artist|
     %tr
       %td= link_to artist.name, artist
+
+= paginate @artists, theme: 'twitter-bootstrap-3'

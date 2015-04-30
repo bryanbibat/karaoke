@@ -21,6 +21,8 @@ gem 'meta-tags', :require => 'meta_tags'
 
 gem 'leaflet-rails'
 gem 'redcarpet'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 
 group :development, :test do
   gem 'byebug'

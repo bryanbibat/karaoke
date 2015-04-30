@@ -1,5 +1,5 @@
 %h1 Songs
-%table.table.table-striped
+%table.table.table-striped.table-condensed
   %tr
     %th Name
     %th Original Name
@@ -11,3 +11,5 @@
       %td= song.original_name
       %td= link_to song.artist.name, song.artist
       %td= song.released_at
+
+= paginate @songs, theme: 'twitter-bootstrap-3'
