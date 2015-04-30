@@ -17,4 +17,6 @@ class KaraokeMachine < ActiveRecord::Base
   has_many :karaoke_songs, inverse_of: :karaoke_machine
 
   validates :name, presence: true
+
+  include CommonMethods
 end

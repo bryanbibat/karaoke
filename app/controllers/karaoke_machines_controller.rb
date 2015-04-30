@@ -4,7 +4,7 @@ class KaraokeMachinesController < ApplicationController
   end
 
   def show
-    @device = KaraokeMachine.friendly.find(params[:id])
+    @device = KaraokeMachine.includes(:karaoke_places).friendly.find(params[:id])
   end
 
   def ktvs
