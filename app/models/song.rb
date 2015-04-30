@@ -20,4 +20,6 @@ class Song < ActiveRecord::Base
   has_many :karaoke_songs, inverse_of: :song
 
   validates :name, :artist, presence: true
+
+  include CommonMethods
 end
