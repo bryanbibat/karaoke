@@ -9,8 +9,7 @@
 
 ## Guard internally checks for changes in the Guardfile and exits.
 ## If you want Guard to automatically start up again, run guard in a
-## shell loop, e.g.:
-##
+## shell loop, e.g.: ##
 ##  $ while bundle exec guard; do echo "Restarting Guard..."; done ## ## Note: if you are using the `directories` clause above and you are not
 ## watching the project directory ('.'), then you will want to move
 ## the Guardfile to a watched dir and symlink it back, e.g.
@@ -56,7 +55,7 @@ end
 #  * zeus: 'zeus rspec' (requires the server to be started separately)
 #  * 'just' rspec: 'rspec'
 
-guard :rspec, cmd: "bin/rspec" do
+guard :rspec, cmd: "bin/bundle exec rspec" do
   require "guard/rspec/dsl"
   dsl = Guard::RSpec::Dsl.new(self)
 

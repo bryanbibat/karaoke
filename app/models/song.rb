@@ -18,4 +18,6 @@ class Song < ActiveRecord::Base
   friendly_id :name, use: :slugged
   belongs_to :artist, inverse_of: :songs
   has_many :karaoke_songs, inverse_of: :song
+
+  validates :name, :artist, presence: true
 end

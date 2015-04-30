@@ -11,6 +11,7 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  slug               :string
+#  address            :string
 #
 
 class KaraokePlace < ActiveRecord::Base
@@ -19,4 +20,6 @@ class KaraokePlace < ActiveRecord::Base
   belongs_to :karaoke_machine, inverse_of: :karaoke_places 
 
   include CommonMethods
+
+  validates :name, :latitude, :longitude, presence: true
 end

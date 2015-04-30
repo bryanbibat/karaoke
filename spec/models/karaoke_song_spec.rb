@@ -13,5 +13,9 @@
 require 'rails_helper'
 
 RSpec.describe KaraokeSong, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should validate_presence_of(:key) }
+  it { should validate_presence_of(:song) }
+  it { should belong_to(:song) }
+  it { should validate_presence_of(:karaoke_machine) }
+  it { should belong_to(:karaoke_machine) }
 end

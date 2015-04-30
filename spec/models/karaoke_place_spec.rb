@@ -11,10 +11,14 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  slug               :string
+#  address            :string
 #
 
 require 'rails_helper'
 
 RSpec.describe KaraokePlace, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:latitude) }
+  it { should validate_presence_of(:longitude) }
+  it { should belong_to(:karaoke_machine) }
 end

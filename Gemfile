@@ -43,7 +43,7 @@ group :development, :test do
   gem 'libnotify'
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', :require => false
 end
 
 source 'https://rails-assets.org' do
