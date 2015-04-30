@@ -3,6 +3,10 @@
 %p
   %em= @song.original_name
 
+%h3
+  by
+  = @song.artist.name
+
 = raw @song.description_html
 
 %h2 Karaoke Keys
