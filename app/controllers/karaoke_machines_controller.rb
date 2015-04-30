@@ -14,7 +14,7 @@ class KaraokeMachinesController < ApplicationController
   def songs
     @device = KaraokeMachine.friendly.find(params[:id])
     @songs = Song.includes(:artist)
-      .select(:slug, :name, :original_name, :key, :artist_id)
+      .select(:slug, :name, :original_name, :notes, :key, :artist_id)
       .joins('LEFT OUTER JOIN karaoke_songs ON karaoke_songs.song_id = songs.id')
       .where('karaoke_songs.karaoke_machine_id = ?', @device.id)
       .order(:name)

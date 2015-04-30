@@ -6,6 +6,7 @@
   %tr
     %th Key
     %th Song
+    %th Notes
     %th Artist
   - @songs.each do |song|
     %tr
@@ -14,6 +15,7 @@
         = link_to song.name, song
         - if song.original_name.present?
           = "(#{song.original_name})"
+      %td= song.notes
       %td= link_to song.artist.name, song.artist
 
 = paginate @songs, theme: 'twitter-bootstrap-3'
