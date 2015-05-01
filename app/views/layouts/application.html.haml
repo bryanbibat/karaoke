@@ -18,8 +18,7 @@
           %button.navbar-toggle{ "type" => "button", "data-toggle" => "collapse", "data-target" => ".navbar-collapse" }
             %span.sr-only Toggle navigation
             %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
+            %span.icon-bar %span.icon-bar
           = link_to "Karaoke", root_url, :class => "navbar-brand"
         .navbar-collapse.collapse
           %ul.nav.navbar-nav
@@ -50,5 +49,5 @@
     = yield :data_scripts
     = javascript_include_tag "application"
     = yield :scripts
-    -#- if Rails.env == "production"
-      -#= render "layouts/analytics"
+    - if Rails.env == "production"
+      = render "layouts/analytics"
