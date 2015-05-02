@@ -1,6 +1,9 @@
 %h1= @artist.name
 
-= @artist.bio
+%p
+  %em= @artist.original_name
+
+= raw @artist.description_html
 
 %h2 Song List
 
