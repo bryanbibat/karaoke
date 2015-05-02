@@ -21,5 +21,7 @@ class Song < ActiveRecord::Base
 
   validates :name, :artist, presence: true
 
+  acts_as_taggable
+
   include CommonMethods
 end

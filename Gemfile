@@ -12,6 +12,8 @@ gem 'puma'
 gem 'haml'
 
 gem 'rails_admin'
+gem 'acts-as-taggable-on'
+gem 'rails_admin_tag_list', github: 'bryanbibat/rails_admin_tag_list'
 gem 'devise'
 gem 'friendly_id'
 gem 'simple_form'

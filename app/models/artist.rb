@@ -16,4 +16,6 @@ class Artist < ActiveRecord::Base
   has_many :songs, inverse_of: :artist
 
   validates :name, presence: true
+
+  acts_as_taggable
 end

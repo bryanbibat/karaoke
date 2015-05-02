@@ -22,4 +22,6 @@ class KaraokePlace < ActiveRecord::Base
   include CommonMethods
 
   validates :name, :latitude, :longitude, presence: true
+
+  acts_as_taggable
 end
