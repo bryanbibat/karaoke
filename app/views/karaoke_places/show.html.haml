@@ -4,6 +4,11 @@
   %em= @bar.address
 = raw @bar.description_html
 
+%p
+  Tags:
+  - @bar.tag_list.each do |tag|
+    = link_to tag, place_tag_path(tag)
+
 - if @bar.karaoke_machine.present?
   %p
     This place uses

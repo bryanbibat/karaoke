@@ -7,6 +7,11 @@
   by
   = @song.artist.name
 
+%p
+  Tags:
+  - @song.tag_list.each do |tag|
+    = link_to tag, song_tag_path(tag)
+
 = raw @song.description_html
 
 %h2 Karaoke Keys

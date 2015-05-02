@@ -37,12 +37,12 @@ RailsAdmin.config do |config|
       configure :slug do
         hide
       end
-      configure :tag_list do
+      configure :tag_list, :tag_list do
         show
       end
     end
     edit do
-      configure :tag_list do
+      configure :tag_list, :tag_list do
         show
       end
     end
@@ -53,12 +53,12 @@ RailsAdmin.config do |config|
       configure :slug do
         hide
       end
-      configure :tag_list do
+      configure :tag_list, :tag_list do
         show
       end
     end
     edit do
-      configure :tag_list do
+      configure :tag_list, :tag_list do
         show
       end
     end
@@ -77,7 +77,7 @@ RailsAdmin.config do |config|
       configure :slug do
         hide
       end
-      configure :tag_list do
+      configure :tag_list, :tag_list do
         show
       end
     end

@@ -1,0 +1,12 @@
+%table.table.table-striped.table-condensed
+  %tr
+    %th Name
+    %th Alternative/Original Name
+    %th Tags
+  - @artists.each do |artist|
+    %tr
+      %td= link_to artist.name, artist
+      %td= artist.original_name
+      %td= artist.tag_list
+
+= paginate @artists, theme: 'twitter-bootstrap-3'

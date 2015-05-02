@@ -19,4 +19,6 @@ module ApplicationHelper
       content_tag "em", "unknown"
     end
   end
+
+  include ActsAsTaggableOn::TagsHelper
 end

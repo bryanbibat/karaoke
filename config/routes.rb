@@ -12,4 +12,11 @@ Rails.application.routes.draw do
   end
   resources 'artists'
   resources 'songs'
+  resources 'tags' do
+    member do
+      get 'artist'
+      get 'song'
+      get 'place'
+    end
+  end
 end

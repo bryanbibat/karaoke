@@ -1,16 +1,7 @@
 #map{ style: "height: 400px" }
 %h1 All Karaoke Places
-%table.table.table-striped
-  %tr
-    %th Name
-    %th Address
-    %th Machine
-  - @bars.each do |bar|
-    %tr
-      %td= link_to bar.name, bar
-      %td= bar.address
-      %td= display_karaoke_machine(bar)
 
+= render 'table'
 
 - content_for :scripts do
   :javascript
