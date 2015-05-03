@@ -19,5 +19,5 @@
     for (var i = 0; i < data.length; i++) {
       L.marker([ data[i]["latitude"], data[i]["longitude"]])
         .addTo(window.Map)
-        .bindPopup("<a href='#{karaoke_places_url}/" + data[i]["slug"] + "'>" + data[i]["name"] + "</a>");
+        .bindPopup("<strong><a href='#{karaoke_places_url}/" + data[i]["slug"] + "'>" + data[i]["name"] + "</a></strong>");
     }
