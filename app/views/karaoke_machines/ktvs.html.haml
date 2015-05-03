@@ -13,8 +13,12 @@
   :javascript
     window.setupMap(13, 122, 5);
     var data = JSON.parse("#{escape_javascript @device.karaoke_places.to_json(only: [:name, :latitude, :longitude, :slug])}")
+    markers = [];
     for (var i = 0; i < data.length; i++) {
-      L.marker([ data[i]["latitude"], data[i]["longitude"]])
+      var marker = L.marker([ data[i]["latitude"], data[i]["longitude"]])
         .addTo(window.Map)
         .bindPopup("<strong><a href='#{karaoke_places_url}/" + data[i]["slug"] + "'>" + data[i]["name"] + "</a></strong>");
+      markers.push(marker);
     }
+    var group = new L.featureGroup(markers);
+    window.Map.fitBounds(group);
