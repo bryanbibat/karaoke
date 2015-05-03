@@ -20,7 +20,7 @@
 - content_for :scripts do
   :javascript
     var data = JSON.parse("#{escape_javascript @bar.to_json(only: [:name, :latitude, :longitude, :slug])}")
+    window.setupMap(data["latitude"], data["longitude"], 16);
     L.marker([ data["latitude"], data["longitude"]])
       .addTo(window.Map)
       .bindPopup("<strong>" + data["name"] + "</strong>");
-    window.Map.setView(new L.LatLng(data["latitude"], data["longitude"]), 16)

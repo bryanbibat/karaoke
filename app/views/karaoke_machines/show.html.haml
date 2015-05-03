@@ -14,6 +14,7 @@
 
 - content_for :scripts do
   :javascript
+    window.setupMap(13, 122, 5);
     var data = JSON.parse("#{escape_javascript @device.karaoke_places.to_json(only: [:name, :latitude, :longitude, :slug])}")
     for (var i = 0; i < data.length; i++) {
       L.marker([ data[i]["latitude"], data[i]["longitude"]])
