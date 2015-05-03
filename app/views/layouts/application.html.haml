@@ -22,16 +22,21 @@
           = link_to "Karaoke", root_url, :class => "navbar-brand"
         .navbar-collapse.collapse
           %ul.nav.navbar-nav
-            %li{ :class => (controller_name == "pages" ? "active" : "") }= link_to "Home", root_url
+            %li{ :class => ((controller_name == "pages" && action_name == "index") ? "active" : "") }= link_to "Home", root_url
             %li{ :class => (controller_name == "karaoke_places" ? "active" : "") }= link_to "KTVs", karaoke_places_url
             %li{ :class => (controller_name == "artists" ? "active" : "") }= link_to "Artists", artists_url
             %li{ :class => (controller_name == "songs" ? "active" : "") }= link_to "Songs", songs_url
+            %li{ :class => (controller_name == "tags" ? "active" : "") }= link_to "Tags", tags_url
           
-          -#- if user_signed_in?
-            -#= render "layouts/logged_in"
-          -#- else
-            -#= render "layouts/logged_out"
-
+          %ul.nav.navbar-nav.navbar-right
+            %li.dropdown
+              = link_to "#", class: "dropdown-toggle", "data-toggle" => "dropdown" do
+                Help
+                %span.caret
+              %ul.dropdown-menu
+                %li= link_to "About", about_path
+                %li= link_to "Submit New Songs/Artist/KTV", submit_info_path
+                %li= link_to "Request Songs/Artists/KTVs", request_info_path
 
     .container.main-container
       - flash.each do |name, msg|

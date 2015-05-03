@@ -1,0 +1,18 @@
+%h1 Submit new Song/Artist/KTV
+
+%p Please use the Disqus comment box below to submit info about new songs, artists, and KTV venues.
+
+%p For existing song/artists/KTVs, please submit that info in the comment section of their respective pages.
+
+%p For new songs and artists, you must confirm that you have seen those songs/artists in a karaoke machine. We do not want to raise the hopes of people who are into non-mainstream music.
+
+%p
+  You can use
+  = link_to "Markdown", "http://daringfireball.net/projects/markdown/"
+  to style the bio/descriptions. For long descriptions, you should use
+  = link_to "Gist", "https://gist.github.com/"
+  or
+  = link_to "Pastebin", "http://pastebin.com/"
+  and just link to it in the comments.
+
+= render 'pages/disqus_code'
