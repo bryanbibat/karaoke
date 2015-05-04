@@ -36,5 +36,7 @@ module Karaoke
       g.helper = false
       g.view_specs = false
     end
+
+    config.title = "Karaokepedia"
   end
 end

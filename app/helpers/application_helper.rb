@@ -1,6 +1,6 @@
 module ApplicationHelper
-  def build_meta_tags(description: "Description", title: nil, image: url_to_image("opengraph.png"), page_type: :website)
-    main_title = "Karaoke"
+  def build_meta_tags(description: "A semi-crowdsourced karaoke database", title: nil, image: url_to_image("opengraph.png"), page_type: :website)
+    main_title = Rails.application.config.title
     set_meta_tags(:title => title,
                   :description => description,
                   :open_graph => {
