@@ -9,9 +9,9 @@
 %h2 Artist tags
 
 - tag_cloud(@artist_tags, %w(css1 css2 css3 css4)) do |tag, css_class| 
-  = link_to tag.name, place_tag_path(tag.name), :class => css_class
+  = link_to tag.name, artist_tag_path(tag.name), :class => css_class
 
 %h2 Song tags
 
 - tag_cloud(@song_tags, %w(css1 css2 css3 css4)) do |tag, css_class| 
-  = link_to tag.name, place_tag_path(tag.name), :class => css_class
+  = link_to tag.name, song_tag_path(tag.name), :class => css_class
