@@ -48,6 +48,7 @@ group :development, :test do
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
   gem 'shoulda-matchers', :require => false
+  gem 'did_you_mean'
 end
 
 source 'https://rails-assets.org' do
@@ -57,6 +58,7 @@ end
 group :development do
   gem 'mina'
   gem 'quiet_assets'
+  gem 'better_errors'
   gem 'spring-commands-rspec'
   gem 'annotate', '~> 2.6.6'
 end
