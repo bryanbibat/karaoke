@@ -15,4 +15,9 @@ require 'rails_helper'
 
 RSpec.describe Artist, type: :model do
   it { should validate_presence_of(:name) }
+  it { should have_many(:songs) }
+  it { should have_many(:collabs) }
+  it { should have_many(:collaborations) }
+  it { should have_many(:members) }
+  it { should have_many(:collaborators) }
 end

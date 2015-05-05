@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150502135241) do
+ActiveRecord::Schema.define(version: 20150505055459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,17 @@ ActiveRecord::Schema.define(version: 20150502135241) do
   end
 
   add_index "artists", ["slug"], name: "index_artists_on_slug", unique: true, using: :btree
+
+  create_table "collabs", force: :cascade do |t|
+    t.integer  "collaborator_id"
+    t.integer  "collaboration_id"
+    t.string   "role"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "collabs", ["collaboration_id"], name: "index_collabs_on_collaboration_id", using: :btree
+  add_index "collabs", ["collaborator_id"], name: "index_collabs_on_collaborator_id", using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
