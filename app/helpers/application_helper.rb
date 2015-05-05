@@ -4,7 +4,7 @@ module ApplicationHelper
     set_meta_tags(:title => title,
                   :description => description,
                   :open_graph => {
-                    :title => title.nil? ? main_title : "\#{title} | \#{main_title}",
+                    :title => title.nil? ? main_title : "#{title} | #{main_title}",
                     :description => description,
                     :type => page_type,
                     :url => url_for(:only_path => false),
