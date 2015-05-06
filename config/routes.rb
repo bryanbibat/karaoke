@@ -22,4 +22,11 @@ Rails.application.routes.draw do
       get 'place'
     end
   end
+  resource 'search' do
+    collection do
+      get 'artist'
+      get 'song'
+      get 'place'
+    end
+  end
 end

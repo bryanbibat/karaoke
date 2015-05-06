@@ -1,0 +1,27 @@
+%h1 Search Results
+
+= form_tag search_url, method: :get, class: "form-inline" do
+  .form-group
+    = text_field_tag "q", params[:q], class: "form-control long-inline", placeholder: "Search"
+    %button{ type: "submit", class: "btn btn-default"}
+      %span.glyphicon.glyphicon-search
+
+%h2 KTVs
+
+= render 'karaoke_places/table'
+
+%h2 Artists
+
+= render 'artists/table'
+
+- unless @artists.last_page?
+  %p.text-right
+    = link_to "View more results &raquo;".html_safe, artist_search_path(q: params[:q]), class: "btn btn-primary btn-sm"
+
+%h2 Songs
+
+= render 'songs/table'
+
+- unless @songs.last_page?
+  %p.text-right
+    = link_to "View more results &raquo;".html_safe, song_search_path(q: params[:q]), class: "btn btn-primary btn-sm"

@@ -25,4 +25,16 @@ class Song < ActiveRecord::Base
   acts_as_taggable
 
   include CommonMethods
+
+  searchkick word_middle: [:name]
+
+  def search_data
+    {
+      name: name,
+      description: description,
+      original_name: original_name,
+      notes: notes,
+      tags: tag_list
+    }
+  end
 end

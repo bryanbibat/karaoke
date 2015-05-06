@@ -1,16 +1,22 @@
-%table.table.table-striped.table-condensed
-  %tr
-    %th Name
-    %th Alternative/Original Name
-    %th Notes
-    %th Artist
-    %th Release Date
-  - @songs.each do |song|
-    %tr
-      %td= link_to song.name, song
-      %td= song.original_name
-      %td= song.notes
-      %td= link_to song.artist.name, song.artist
-      %td= song.released_at
+- if @songs.empty?
+  %p
+    %em No songs found
 
-= paginate @songs, theme: 'twitter-bootstrap-3'
+- else 
+  %table.table.table-striped.table-condensed
+    %tr
+      %th Name
+      %th Alternative/Original Name
+      %th Notes
+      %th Artist
+      %th Release Date
+    - @songs.each do |song|
+      %tr
+        %td= link_to song.name, song
+        %td= song.original_name
+        %td= song.notes
+        %td= link_to song.artist.name, song.artist
+        %td= song.released_at
+
+  - unless @remove_paginate
+    = paginate @songs, theme: 'twitter-bootstrap-3'

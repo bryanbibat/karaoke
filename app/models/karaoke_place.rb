@@ -24,4 +24,15 @@ class KaraokePlace < ActiveRecord::Base
   validates :name, :latitude, :longitude, presence: true
 
   acts_as_taggable
+
+  searchkick word_middle: [:name]
+
+  def search_data
+    {
+      name: name,
+      description: description,
+      address: address,
+      tags: tag_list
+    }
+  end
 end
