@@ -26,6 +26,8 @@ gem 'redcarpet'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 
+gem 'searchkick'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
