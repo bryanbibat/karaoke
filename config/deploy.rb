@@ -73,6 +73,7 @@ task :deploy => :environment do
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
+      queue "rm #{deploy_to}/#{current_path}/.ruby-version"
     end
   end
 end
