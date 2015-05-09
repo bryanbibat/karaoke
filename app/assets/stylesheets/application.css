@@ -13,7 +13,6 @@
  *= depend_on_asset "layers.png"
  *= depend_on_asset "layers-2x.png"
  *
- *= require bootstrap
  *= require leaflet
  *= require_tree .
  *= require_self

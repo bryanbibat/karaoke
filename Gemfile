@@ -21,6 +21,7 @@ gem 'simple_form'
 gem 'sitemap_generator'
 gem 'meta-tags', :require => 'meta_tags'
 
+gem 'bootstrap-sass', '~> 3.3.4'
 gem 'leaflet-rails'
 gem 'redcarpet'
 gem 'kaminari'
@@ -51,10 +52,6 @@ group :development, :test do
   gem 'rb-fsevent', :require => false
   gem 'shoulda-matchers', :require => false
   gem 'did_you_mean'
-end
-
-source 'https://rails-assets.org' do
-  gem 'rails-assets-bootstrap'
 end
 
 group :development do
