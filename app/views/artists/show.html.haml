@@ -36,10 +36,14 @@
 %table.table.table-striped
   %tr
     %th Name
+    %th Alternative/Original Name
+    %th Notes
     %th Release Date
   - @artist.songs.order(:name).each do |song|
     %tr
       %td= link_to song.name, song
+      %td= song.original_name
+      %td= song.notes
       %td= song.released_at
 
 = render 'pages/disqus_code'
