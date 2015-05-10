@@ -20,9 +20,9 @@
 
 %p Right now, this site is curated by a handful of admins. All requests and submissions will go through the comments and will be verified and processed by the admins.
 
-%p If it gets a huge amount traffic (i.e. &gt; 5000 songs), we'll consider turning this into a fully crowdsourced site, with submission voting and wiki style editing. I personally think <em>it won't happen</em> but it doesn't hurt to dream.
+%p If it gets a huge amount traffic (i.e. &gt; 5000 songs), we'll consider turning this into a fully crowdsourced site, with submission voting and wiki style editing.
 
-%h2 Some quick notes on non-English/OPM music
+%h2 On non-English/OPM music
 
 %p
   Chinese and Korean Pop song entries are on hold until we get people who can curate the list.
@@ -33,3 +33,39 @@
   and
   = link_to "songs that we've seen in a local KTVs", "http://karaoke.karaniwan.org/songs/crossing-field"
   \. We also prioritize anime OSTs as they are more popular locally than your usual idol group pop music.
+
+%h2 A quick run-through of local karaoke machines
+
+%p
+  %strong
+    %em= link_to "Kumyoung", karaoke_machine_path("kumyoung")
+  karaoke machines are the reason why we started this database - they have a decent collection of modern Japanese music and their 
+  = link_to "numbers/keys can be searched", "http://dncenter.ikaraoke.kr/"
+  online. Even a hole in the wall public karaoke with a non-updated KY machine can have 
+  = link_to '"Rewrite"', song_path("rewrite") 
+  and
+  = link_to '"Tears"', song_path("tears")
+  hidden within it.
+
+%p
+  The only downsides to KY is that it's no longer as widespread as before (e.g. Timezone switched to Platinum) and the online search sometimes produces unexpected results (e.g. not all matching songs are displayed).
+
+%p
+  %strong
+    %em= link_to "TJ Media", karaoke_machine_path("tj-media-tkr-304p")
+  machines (more specifically, the TKR-304P model) also make up a good chunk of the local KTV market as it's the one used by Quantum Amusement arcades.
+
+  The machine receives praise for its build quality, but unfortunately for us this Philippine version does not match the numbering scheme used in their Korean site. This means that even though the machines may have pre-2010 Japanese/Chinese music, we will have to search for them manually as no local song books are available for those 2 languages.
+
+%p
+  %strong
+    %em= link_to "Platinum", karaoke_machine_path("platinum")
+  is the last major "name" that you'll find in local KTVs and you can find them in local Timezone arcades. There's not much to say about Platinum machines; like TJ Media, they have hidden and unlisted Japanese songs that we'll have to find manually. We also don't expect to find post-2000 songs.
+
+%p
+
+
+
+
+
+

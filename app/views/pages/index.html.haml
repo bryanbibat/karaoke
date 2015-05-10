@@ -7,6 +7,8 @@
   %em because karaoke is more than
   "Let it Go"
   %em on endless repeat
+%p.text-center
+  = link_to "Learn more about this site and how you can contribute &raquo;".html_safe, about_path, class: "btn btn-default btn-sm"
 - content_for :scripts do
   :javascript
     window.setupMap(13, 122, 5);
