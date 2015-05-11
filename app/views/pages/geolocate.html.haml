@@ -15,6 +15,15 @@
         .bindPopup("<strong><a href='#{karaoke_places_url}/" + data[i]["slug"] + "'>" + data[i]["name"] + "</a></strong>");
       markers.push(marker);
     }
+    var greenIcon = L.icon({
+      iconSize:     [25, 41], 
+      iconAnchor:   [13, 41], 
+      popupAnchor:   [0, -33], 
+      iconUrl: '#{image_url("marker-green")}'
+    });
+    var marker = L.marker([ #{params[:lat]}, #{params[:long]}], {icon: greenIcon}).addTo(window.Map).bindPopup("You are here");
+    markers.push(marker);
+
     var group = new L.featureGroup(markers);
     window.Map.fitBounds(group);
 
