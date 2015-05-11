@@ -1,0 +1,20 @@
+- build_meta_tags title: "Karaoke Places close to me"
+#map{ style: "height: 400px" }
+%h1 Karaoke Places close to me
+
+= render 'karaoke_places/table'
+
+- content_for :scripts do
+  :javascript
+    window.setupMap(#{params[:lat]}, #{params[:long]}, 5);
+    var data = JSON.parse("#{escape_javascript @bars.to_json(only: [:name, :latitude, :longitude, :slug])}")
+    markers = [];
+    for (var i = 0; i < data.length; i++) {
+      var marker = L.marker([ data[i]["latitude"], data[i]["longitude"]])
+        .addTo(window.Map)
+        .bindPopup("<strong><a href='#{karaoke_places_url}/" + data[i]["slug"] + "'>" + data[i]["name"] + "</a></strong>");
+      markers.push(marker);
+    }
+    var group = new L.featureGroup(markers);
+    window.Map.fitBounds(group);
+

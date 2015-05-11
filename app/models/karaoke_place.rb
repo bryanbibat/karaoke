@@ -25,14 +25,15 @@ class KaraokePlace < ActiveRecord::Base
 
   acts_as_taggable
 
-  searchkick word_middle: [:name]
+  searchkick word_middle: [:name], locations: ["location"]
 
   def search_data
     {
       name: name,
       description: description,
       address: address,
-      tags: tag_list
+      tags: tag_list,
+      location: [latitude, longitude]
     }
   end
 end

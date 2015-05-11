@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about', as: 'about'
   get 'submit_info', to: 'pages#submit_info', as: 'submit_info'
   get 'request_info', to: 'pages#request_info', as: 'request_info'
+  get 'geolocate', to: 'pages#geolocate', as: 'geolocate'
+
   resources 'karaoke_places'
   resources 'karaoke_machines' do 
     member do
