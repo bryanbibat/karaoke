@@ -28,6 +28,7 @@ gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 
 gem 'searchkick'
+gem 'typhoeus'
 
 group :development, :test do
   gem 'byebug'
