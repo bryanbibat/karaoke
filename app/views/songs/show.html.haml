@@ -4,16 +4,21 @@
 %p
   %em= @song.original_name
 
-%h3
-  by
-  = link_to @song.artist.name, @song.artist
+%p
+  %strong
+    by
+    = link_to @song.artist.name, @song.artist
+
+- if @song.description.present?
+  = raw @song.description_html
+- else
+  %p= @song.notes
 
 %p
   Tags:
   - @song.tag_list.each do |tag|
     = link_to tag, song_tag_path(tag)
 
-= raw @song.description_html
 
 %h2 Karaoke Keys
 %table.table.table-striped
