@@ -1,22 +1,5 @@
 - build_meta_tags title: "Songs"
-%h1 
-  - if params[:initial].blank?
-    All
-  Songs
-  - if params[:initial].present?
-    starting with
-    = params[:initial]
 
-%p
-  - if params[:initial].blank?
-    All
-  - else
-    = link_to "All", songs_url
-  - ('A'..'Z').each do |x|
-    \-
-    - if params[:initial] == x
-      = x
-    - else
-      = link_to x, songs_url(initial: x)
+= render partial: 'layouts/initial_paginator', locals: { url: songs_url }
 
 = render 'table'

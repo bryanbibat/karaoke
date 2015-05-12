@@ -1,0 +1,19 @@
+%h1 
+  - if params[:initial].blank?
+    All
+  = title
+  - if params[:initial].present?
+    starting with
+    = params[:initial]
+
+%p
+  - if params[:initial].blank?
+    All
+  - else
+    = link_to "All", url
+  - ('A'..'Z').each do |x|
+    \-
+    - if params[:initial] == x
+      = x
+    - else
+      = link_to x, url + "?initial=#{x}"
