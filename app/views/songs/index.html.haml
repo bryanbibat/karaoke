@@ -1,5 +1,7 @@
 - build_meta_tags title: "Songs"
 %h1 
+  - if params[:initial].blank?
+    All
   Songs
   - if params[:initial].present?
     starting with
