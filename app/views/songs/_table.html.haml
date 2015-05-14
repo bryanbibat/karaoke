@@ -6,17 +6,17 @@
   %table.table.table-striped.table-condensed
     %tr
       %th Name
-      %th Alternative/Original Name
-      %th Notes
+      %th.hidden-xs Alternative/Original Name
+      %th.hidden-xs Notes
       %th Artist
-      %th Release Date
+      %th.hidden-xs Release Date
     - @songs.each do |song|
       %tr
         %td= link_to song.name, song
-        %td= song.original_name
-        %td= song.notes
+        %td.hidden-xs= song.original_name
+        %td.hidden-xs= song.notes
         %td= link_to song.artist.name, song.artist
-        %td= song.released_at
+        %td.hidden-xs= song.released_at
 
   - unless @remove_paginate
     = paginate @songs, theme: 'twitter-bootstrap-3'
