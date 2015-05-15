@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505055459) do
+ActiveRecord::Schema.define(version: 20150515133747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,17 @@ ActiveRecord::Schema.define(version: 20150505055459) do
   add_index "collabs", ["collaboration_id"], name: "index_collabs_on_collaboration_id", using: :btree
   add_index "collabs", ["collaborator_id"], name: "index_collabs_on_collaborator_id", using: :btree
 
+  create_table "franchises", force: :cascade do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.text     "description"
+    t.integer  "karaoke_machine_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "franchises", ["karaoke_machine_id"], name: "index_franchises_on_karaoke_machine_id", using: :btree
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -89,8 +100,10 @@ ActiveRecord::Schema.define(version: 20150505055459) do
     t.datetime "updated_at",                                 null: false
     t.string   "slug"
     t.string   "address"
+    t.integer  "franchise_id"
   end
 
+  add_index "karaoke_places", ["franchise_id"], name: "index_karaoke_places_on_franchise_id", using: :btree
   add_index "karaoke_places", ["karaoke_machine_id"], name: "index_karaoke_places_on_karaoke_machine_id", using: :btree
   add_index "karaoke_places", ["slug"], name: "index_karaoke_places_on_slug", unique: true, using: :btree
 
@@ -140,6 +153,8 @@ ActiveRecord::Schema.define(version: 20150505055459) do
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
+  add_foreign_key "franchises", "karaoke_machines"
+  add_foreign_key "karaoke_places", "franchises"
   add_foreign_key "karaoke_places", "karaoke_machines"
   add_foreign_key "karaoke_songs", "karaoke_machines"
   add_foreign_key "karaoke_songs", "songs"

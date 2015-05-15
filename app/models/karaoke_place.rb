@@ -18,6 +18,7 @@ class KaraokePlace < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
   belongs_to :karaoke_machine, inverse_of: :karaoke_places, touch: true
+  belongs_to :franchise, inverse_of: :karaoke_places, touch: true
 
   include CommonMethods
 
