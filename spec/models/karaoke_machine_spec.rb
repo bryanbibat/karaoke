@@ -14,4 +14,7 @@ require 'rails_helper'
 
 RSpec.describe KaraokeMachine, type: :model do
   it { should validate_presence_of(:name) }
+  it { should have_many(:karaoke_places) }
+  it { should have_many(:franchises) }
+  it { should have_many(:karaoke_songs) }
 end
