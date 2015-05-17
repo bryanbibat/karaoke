@@ -1,4 +1,9 @@
-# Unnamed Karaoke App
+# Karaokepedia
+
+  * [![Build Status](https://travis-ci.org/bryanbibat/karaoke.png?branch=master)](https://travis-ci.org/bryanbibat/karaoke)
+  * [![Code Climate](https://codeclimate.com/github/bryanbibat/karaoke.png)](https://codeclimate.com/github/bryanbibat/karaoke)
+  * [![Dependency Status](https://gemnasium.com/bryanbibat/karaoke.png)](https://gemnasium.com/bryanbibat/karaoke)
+  * [![Coverage Status](https://coveralls.io/repos/bryanbibat/karaoke/badge.png)](https://coveralls.io/r/bryanbibat/karaoke)
 
 Solve the following problems:
 
