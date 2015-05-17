@@ -47,6 +47,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'launchy'
   gem 'simplecov', :require => false
+  gem 'coveralls', :require => false
   gem 'growl'
   gem 'libnotify'
   gem 'rb-inotify', :require => false
