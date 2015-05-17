@@ -7,6 +7,16 @@ RSpec.describe SongsController, type: :controller do
       get :index
       expect(response).to have_http_status(:success)
     end
+
+    it "returns http success on filtering by initial" do
+      get :index, initial: "A"
+      expect(response).to have_http_status(:success)
+    end
+
+    it "returns http redirect on filtering by wrong initial" do
+      get :index, initial: "a"
+      expect(response).to have_http_status(:redirect)
+    end
   end
 
   describe "GET #show" do

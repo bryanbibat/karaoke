@@ -20,4 +20,9 @@ RSpec.describe Artist, type: :model do
   it { should have_many(:collaborations) }
   it { should have_many(:members) }
   it { should have_many(:collaborators) }
+
+  it "should get description HTML" do
+    artist = FactoryGirl.create(:artist, description: "*test*")
+    expect(artist.description_html).to eq "<p><em>test</em></p>\n"
+  end
 end
