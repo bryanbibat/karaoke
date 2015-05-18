@@ -4,7 +4,7 @@ class ArtistsController < ApplicationController
       if valid_initial
         @artists = Artist.where("name like '#{params[:initial]}%'").order(:name).page params[:page]
       else
-        redirect_to songs_path
+        redirect_to artists_path
       end
     else
       @artists = Artist.order(:name).page params[:page]
