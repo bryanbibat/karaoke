@@ -3,6 +3,8 @@
   = link_to @device.name, @device
   Songs
 
+= render partial: 'layouts/initial_paginator', locals: { url: songs_karaoke_machine_url(params[:id]) }
+
 %table.table.table-striped.table-condensed
   %tr
     %th Key

@@ -1,13 +1,12 @@
 class ArtistsController < ApplicationController
   def index
+    @artists = Artist.order(:name).page params[:page]
     if params[:initial].present?
       if valid_initial
-        @artists = Artist.where("name like '#{params[:initial]}%'").order(:name).page params[:page]
+        @artists = @artists.where("name like '#{params[:initial]}%'")
       else
         redirect_to artists_path
       end
-    else
-      @artists = Artist.order(:name).page params[:page]
     end
   end
 

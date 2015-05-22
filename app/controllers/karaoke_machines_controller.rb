@@ -19,5 +19,12 @@ class KaraokeMachinesController < ApplicationController
       .where('karaoke_songs.karaoke_machine_id = ?', @device.id)
       .order(:name)
       .page params[:page]
+    if params[:initial].present? 
+      if valid_initial
+        @songs = @songs.where("name like '#{params[:initial]}%'")
+      else
+        redirect_to songs_karaoke_machine_path(params[:id])
+      end
+    end
   end
 end
