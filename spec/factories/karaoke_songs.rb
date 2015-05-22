@@ -13,8 +13,7 @@
 FactoryGirl.define do
   factory :karaoke_song do
     key "MyString"
-song nil
-karaoke_machine nil
+    song
+    karaoke_machine
   end
-
 end
