@@ -8,7 +8,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 
-gem 'puma'
 gem 'haml'
 
 gem 'rails_admin'
@@ -31,6 +30,7 @@ gem 'searchkick'
 gem 'typhoeus'
 
 group :development, :test do
+  gem 'puma'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
