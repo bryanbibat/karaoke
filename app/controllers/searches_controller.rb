@@ -2,7 +2,7 @@ class SearchesController < ApplicationController
   def show
     @remove_paginate = true
     @bars = KaraokePlace.search params[:q], include: [:karaoke_machine]
-    @songs = Song.search params[:q], include: [:artist], per_page: 10
+    @songs = Song.search params[:q], include: [:artist, :karaoke_machines], per_page: 10
     @artists = Artist.search params[:q], per_page: 10
   end
 
@@ -11,6 +11,6 @@ class SearchesController < ApplicationController
   end
 
   def song
-    @songs = Song.search params[:q], include: [:artist], per_page: 25, page: params[:page]
+    @songs = Song.search params[:q], include: [:artist, :karaoke_machines], per_page: 25, page: params[:page]
   end
 end

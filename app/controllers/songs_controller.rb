@@ -2,12 +2,12 @@ class SongsController < ApplicationController
   def index
     if params[:initial].present?
       if valid_initial
-        @songs = Song.where("name like '#{params[:initial]}%'").includes(:artist).order(:name).page params[:page]
+        @songs = Song.where("name like '#{params[:initial]}%'").includes(:artist, :karaoke_machines).order(:name).page params[:page]
       else
         redirect_to songs_path
       end
     else
-      @songs = Song.includes(:artist).order(:name).page params[:page]
+      @songs = Song.includes(:artist, :karaoke_machines).order(:name).page params[:page]
     end
   end
 

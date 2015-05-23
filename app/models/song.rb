@@ -19,6 +19,7 @@ class Song < ActiveRecord::Base
   friendly_id :name, use: :slugged
   belongs_to :artist, inverse_of: :songs
   has_many :karaoke_songs, inverse_of: :song
+  has_many :karaoke_machines, -> { uniq.order(:name) }, through: :karaoke_songs, inverse_of: :songs
 
   validates :name, :artist, presence: true
 

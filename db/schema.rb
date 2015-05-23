@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150515133747) do
+ActiveRecord::Schema.define(version: 20150522183022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,8 @@ ActiveRecord::Schema.define(version: 20150515133747) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "slug"
+    t.string   "mark_text"
+    t.string   "mark_class"
   end
 
   add_index "karaoke_machines", ["slug"], name: "index_karaoke_machines_on_slug", unique: true, using: :btree

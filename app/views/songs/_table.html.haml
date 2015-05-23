@@ -9,14 +9,17 @@
       %th.hidden-xs Alternative/Original Name
       %th.hidden-xs Notes
       %th Artist
-      %th.hidden-xs Release Date
+      %th Availability
     - @songs.each do |song|
       %tr
         %td= link_to song.name, song
         %td.hidden-xs= song.original_name
         %td.hidden-xs= song.notes
         %td= link_to song.artist.name, song.artist
-        %td.hidden-xs= song.released_at
+        %td
+          - song.karaoke_machines.each do |m|
+            = link_to m do
+              %span.label{ class: "label-#{m.display_mark_class}"}= m.display_mark_text
 
   - unless @remove_paginate
     = paginate @songs, theme: 'twitter-bootstrap-3'

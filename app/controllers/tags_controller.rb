@@ -8,7 +8,7 @@ class TagsController < ApplicationController
   def show
     @bars = KaraokePlace.tagged_with(params[:id]).order(:name).page(1)
     @artists = Artist.tagged_with(params[:id]).order(:name).page(1)
-    @songs = Song.tagged_with(params[:id]).order(:name).page(1)
+    @songs = Song.tagged_with(params[:id]).includes(:artist, :karaoke_machines).order(:name).page(1)
   end
 
   def artist
@@ -16,7 +16,7 @@ class TagsController < ApplicationController
   end
 
   def song
-    @songs = Song.tagged_with(params[:id]).order(:name).page(params[:page])
+    @songs = Song.tagged_with(params[:id]).includes(:artist, :karaoke_machines).order(:name).page(params[:page])
   end
 
   def place
