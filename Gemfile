@@ -21,6 +21,7 @@ gem 'sitemap_generator'
 gem 'meta-tags', :require => 'meta_tags'
 
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootswatch-rails'
 gem 'leaflet-rails'
 gem 'redcarpet'
 gem 'kaminari'

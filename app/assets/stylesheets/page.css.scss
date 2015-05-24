@@ -1,5 +1,12 @@
 @import "bootstrap-sprockets";
+@import "bootswatch/flatly/variables";
 @import "bootstrap";
+@import "bootswatch/flatly/bootswatch";
+
+table a:not(.btn),
+.table a:not(.btn) {
+  text-decoration: none !important;
+}
 
 footer, .footer {
   margin-top: 50px;
