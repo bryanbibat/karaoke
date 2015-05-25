@@ -39,11 +39,18 @@
     %th Alternative/Original Name
     %th Notes
     %th Release Date
+    %th Keys
   - @artist.songs.order(:name).each do |song|
     %tr
       %td= link_to song.name, song
       %td= song.original_name
       %td= song.notes
       %td= song.released_at
+      %td
+        - song.karaoke_songs.each do |k|
+          %span.label{ class: "label-#{k.karaoke_machine.display_mark_class}"}= k.karaoke_machine.display_mark_text
+          = k.key
+          %br
+
 
 = render 'pages/disqus_code'

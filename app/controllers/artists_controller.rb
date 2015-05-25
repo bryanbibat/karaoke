@@ -11,6 +11,6 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    @artist = Artist.includes(:songs, :collaborations, :collaborators).friendly.find(params[:id])
+    @artist = Artist.includes({ songs: { karaoke_songs: :karaoke_machine }}, :collaborations, :collaborators).friendly.find(params[:id])
   end
 end
