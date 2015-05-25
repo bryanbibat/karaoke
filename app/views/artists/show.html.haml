@@ -48,7 +48,8 @@
       %td= song.released_at
       %td
         - song.karaoke_songs.each do |k|
-          %span.label{ class: "label-#{k.karaoke_machine.display_mark_class}"}= k.karaoke_machine.display_mark_text
+          = link_to k.karaoke_machine do
+            %span.label{ class: "label-#{k.karaoke_machine.display_mark_class}"}= k.karaoke_machine.display_mark_text
           = k.key
           %br
 
