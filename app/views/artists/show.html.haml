@@ -19,8 +19,8 @@
 
 %p
   Tags:
-  - @artist.tag_list.each do |tag|
-    = link_to tag, artist_tag_path(tag)
+  - @artist.tag_list.each_with_index do |tag, i|
+    = link_to(tag, artist_tag_path(tag)) + (i < @artist.tag_list.length - 1 ? ', ' : '')
 
 - if @artist.collaborations.present?
   %h3 Related acts:
