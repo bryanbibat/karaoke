@@ -38,14 +38,14 @@
     %th Name
     %th.hidden-xs Alternative/Original Name
     %th.hidden-xs Notes
-    %th.hidden-xs Release Date
+    %th.visible-md-block.visible-lg-block Release Date
     %th Keys
   - @artist.songs.order(:name).each do |song|
     %tr
       %td= link_to song.name, song
       %td.hidden-xs= song.original_name
       %td.hidden-xs= song.notes
-      %td.hidden-xs= song.released_at
+      %td.visible-md-block.visible-lg-block= song.released_at
       %td
         - song.karaoke_songs.each do |k|
           = link_to k.karaoke_machine do
