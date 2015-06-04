@@ -34,8 +34,7 @@ class Song < ActiveRecord::Base
       name: name,
       description: description,
       original_name: original_name,
-      notes: notes,
-      tags: tag_list
+      notes: notes
     }
   end
 end

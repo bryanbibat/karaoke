@@ -33,8 +33,7 @@ class Artist < ActiveRecord::Base
     {
       name: name,
       description: description,
-      original_name: original_name,
-      tags: tag_list
+      original_name: original_name
     }
   end
 end
