@@ -137,6 +137,8 @@ GEM
     ffi (1.9.8)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
+    font-awesome-sass (4.3.2.1)
+      sass (~> 3.2)
     formatador (0.2.5)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
@@ -412,6 +414,7 @@ DEPENDENCIES
   devise
   did_you_mean
   factory_girl_rails (~> 4.0)
+  font-awesome-sass (~> 4.3.0)
   friendly_id
   growl
   guard-bundler
