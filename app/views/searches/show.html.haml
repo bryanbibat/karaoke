@@ -20,7 +20,7 @@
 
 %h2 Songs
 
-= render 'songs/table'
+= render partial: 'songs/search_table', locals: { songs: @songs }
 
 - unless @songs.last_page?
   %p.text-right

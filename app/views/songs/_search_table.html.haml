@@ -1,0 +1,19 @@
+%table.table.table-striped
+  %tr
+    %th Name
+    %th.hidden-xs Alternative/Original Name
+    %th.hidden-xs Notes
+    %th.visible-md-block.visible-lg-block Release Date
+    %th Keys
+  - songs.each do |song|
+    %tr
+      %td= link_to song.name, song
+      %td.hidden-xs= song.original_name
+      %td.hidden-xs= song.notes
+      %td.visible-md-block.visible-lg-block= song.released_at
+      %td
+        - song.karaoke_songs.sort_by { |k| k.karaoke_machine.name }.each do |k|
+          = link_to k.karaoke_machine do
+            %span.label{ class: "label-#{k.karaoke_machine.display_mark_class}"}= k.karaoke_machine.display_mark_text
+          = k.key
+          %br
