@@ -56,6 +56,8 @@ group :development, :test do
   gem 'rb-fsevent', :require => false
   gem 'shoulda-matchers', :require => false
   gem 'did_you_mean'
+  gem 'pry'
+  gem 'pry-byebug'
 end
 
 group :development do
