@@ -14,7 +14,7 @@
 class Artist < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
-  has_many :songs, inverse_of: :artist
+  has_many :songs, -> { order(:name) }, inverse_of: :artist
   has_many :collabs, foreign_key: :collaborator_id, class_name: "Collab", inverse_of: :collaborator
   has_many :collaborations, through: :collabs
 
