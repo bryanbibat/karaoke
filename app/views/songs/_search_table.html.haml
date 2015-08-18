@@ -2,6 +2,8 @@
   %tr
     %th Name
     %th.hidden-xs Alternative/Original Name
+    - unless controller_name.eql? "artists"
+      %th Artist
     %th.hidden-xs Notes
     %th.visible-md-block.visible-lg-block Release Date
     %th Keys
@@ -9,6 +11,8 @@
     %tr
       %td= link_to song.name, song
       %td.hidden-xs= song.original_name
+      - unless controller_name.eql? "artists"
+        %td= link_to song.artist.name, song.artist
       %td.hidden-xs= song.notes
       %td.visible-md-block.visible-lg-block= song.released_at
       %td
