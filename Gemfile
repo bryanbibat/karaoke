@@ -21,7 +21,7 @@ gem 'sitemap_generator'
 gem 'meta-tags', :require => 'meta_tags'
 
 gem 'bootstrap-sass', '~> 3.3.4'
-gem 'font-awesome-sass', '~> 4.3.0'
+gem 'font-awesome-sass', '~> 4.4.0'
 gem 'bootswatch-rails'
 gem 'leaflet-rails'
 gem 'redcarpet'
@@ -33,7 +33,6 @@ gem 'typhoeus'
 
 group :development, :test do
   gem 'puma'
-  gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'haml-rails'
