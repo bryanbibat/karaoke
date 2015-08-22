@@ -18,7 +18,7 @@
       %td.hidden-xs= song.notes
       %td= link_to song.artist.name, song.artist
 
-= paginate @songs, theme: 'twitter-bootstrap-3'
+= paginate @songs
 
 %p
   = link_to "Go back to #{@device.name} info page", @device

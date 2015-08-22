@@ -26,7 +26,6 @@ gem 'bootswatch-rails'
 gem 'leaflet-rails'
 gem 'redcarpet'
 gem 'kaminari'
-gem 'bootstrap-kaminari-views'
 
 gem 'searchkick'
 gem 'typhoeus'
