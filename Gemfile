@@ -38,7 +38,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'shoulda', '>=3.1.1'
-  gem 'capybara', '~> 2.4.1'
+  gem 'capybara', '~> 2.5.0'
   gem 'database_cleaner'
   gem 'rack-livereload'
   gem 'guard-livereload'
