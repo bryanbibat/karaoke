@@ -12,5 +12,8 @@ class SongsController < ApplicationController
 
   def show
     @song = Song.includes(karaoke_songs: :karaoke_machine).friendly.find(params[:id])
+    if @song.tag_list.include? "Japanese"
+      j_karaoke_invite
+    end
   end
 end

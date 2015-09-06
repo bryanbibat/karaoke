@@ -12,5 +12,9 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.includes({ songs: { karaoke_songs: :karaoke_machine }}, :collaborations, :collaborators).friendly.find(params[:id])
+
+    if @artist.tag_list.include? "Japanese"
+      j_karaoke_invite
+    end
   end
 end

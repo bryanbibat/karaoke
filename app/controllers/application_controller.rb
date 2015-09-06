@@ -8,4 +8,9 @@ class ApplicationController < ActionController::Base
   def valid_initial
     params[:initial].length == 1 && params[:initial] >= "A" && params[:initial] <= "Z"
   end
+
+
+  def j_karaoke_invite
+    flash[:notice] = "We've started a karaoke group for people interested in singing Japanese songs! Join us at <a href='http://www.meetup.com/J-Karaoke-Manila/'>http://www.meetup.com/J-Karaoke-Manila/</a>.".html_safe
+  end
 end
