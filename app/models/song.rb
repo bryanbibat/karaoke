@@ -34,7 +34,12 @@ class Song < ActiveRecord::Base
       name: name,
       description: description,
       original_name: original_name,
-      notes: notes
+      notes: notes,
+      song_keys: song_keys
     }
+  end
+
+  def song_keys
+    karaoke_songs.map(&:key)
   end
 end

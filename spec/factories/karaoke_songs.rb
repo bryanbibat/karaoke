@@ -12,7 +12,7 @@
 
 FactoryGirl.define do
   factory :karaoke_song do
-    key "MyString"
+    key "12345"
     song
     karaoke_machine
   end
