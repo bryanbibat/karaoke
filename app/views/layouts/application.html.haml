@@ -24,20 +24,20 @@
         .navbar-collapse.collapse
           %ul.nav.navbar-nav
             %li{ :class => ((controller_name == "pages" && action_name == "index") ? "active" : "") }= link_to "Home", root_url
-            %li{ :class => (controller_name == "karaoke_places" ? "active" : "") }= link_to "KTVs", karaoke_places_url
-            %li{ :class => (controller_name == "artists" ? "active" : "") }= link_to "Artists", artists_url
-            %li{ :class => (controller_name == "songs" ? "active" : "") }= link_to "Songs", songs_url
-            %li{ :class => (controller_name == "tags" ? "active" : "") }= link_to "Tags", tags_url
-          
-          %ul.nav.navbar-nav.navbar-left
             %li.dropdown
               = link_to "#", class: "dropdown-toggle", "data-toggle" => "dropdown" do
-                Help
+                Database
                 %span.caret
               %ul.dropdown-menu
-                %li= link_to "About", about_path
-                %li= link_to "Submit New Songs/Artist/KTV", submit_info_path
-                %li= link_to "Request Songs/Artists/KTVs", request_info_path
+                %li{ :class => (controller_name == "karaoke_places" ? "active" : "") }= link_to "KTVs", karaoke_places_url
+                %li{ :class => (controller_name == "artists" ? "active" : "") }= link_to "Artists", artists_url
+                %li{ :class => (controller_name == "songs" ? "active" : "") }= link_to "Songs", songs_url
+                %li{ :class => (controller_name == "tags" ? "active" : "") }= link_to "Tags", tags_url
+          
+          %ul.nav.navbar-nav.navbar-left
+            %li{ :class => (action_name == "submit_info" ? "active" : "") }= link_to "Submit Info", submit_info_path
+            %li{ :class => (action_name == "request_info" ? "active" : "") }= link_to "Request Info", request_info_path
+            %li{ :class => (action_name == "about" ? "active" : "") }= link_to "About", about_path
 
           = form_tag search_url, method: :get,  class: "navbar-form navbar-right" do
             .form-group
