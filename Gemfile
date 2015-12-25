@@ -22,7 +22,7 @@ gem 'sitemap_generator'
 gem 'meta-tags', :require => 'meta_tags'
 
 gem 'bootstrap-sass', '~> 3.3.4'
-gem 'font-awesome-sass', '~> 4.4.0'
+gem 'font-awesome-sass', '~> 4.5.0'
 gem 'bootswatch-rails'
 gem 'leaflet-rails'
 gem 'redcarpet'
@@ -33,7 +33,6 @@ gem 'typhoeus'
 
 group :development, :test do
   gem 'puma'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'haml-rails'
   gem 'rspec-rails'
@@ -54,7 +53,7 @@ group :development, :test do
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
   gem 'shoulda-matchers', :require => false
-  gem 'did_you_mean'
+  gem 'did_you_mean', '~> 0.10.0'
   gem 'pry'
   gem 'pry-byebug'
 end
@@ -65,4 +64,5 @@ group :development do
   gem 'better_errors'
   gem 'spring-commands-rspec'
   gem 'annotate', '~> 2.6.6'
+  gem 'web-console', '~> 3.0'
 end
