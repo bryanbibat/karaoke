@@ -1,5 +1,5 @@
 if $("#map").length > 0
-  window.setupMap = (lat, long, zoom) ->
+  window.setupMap = (lat,  long, zoom) ->
     window.Map = L.map('map').setView([
       lat
       long
