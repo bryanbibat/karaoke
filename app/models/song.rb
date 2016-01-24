@@ -24,6 +24,7 @@ class Song < ActiveRecord::Base
   validates :name, :artist, presence: true
 
   acts_as_taggable
+  has_paper_trail
 
   include CommonMethods
 

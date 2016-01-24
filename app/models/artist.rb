@@ -24,6 +24,7 @@ class Artist < ActiveRecord::Base
   validates :name, presence: true
 
   acts_as_taggable
+  has_paper_trail
 
   include CommonMethods
 

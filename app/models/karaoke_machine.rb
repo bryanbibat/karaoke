@@ -20,6 +20,8 @@ class KaraokeMachine < ActiveRecord::Base
 
   validates :name, presence: true
 
+  has_paper_trail
+
   include CommonMethods
 
   def display_mark_text

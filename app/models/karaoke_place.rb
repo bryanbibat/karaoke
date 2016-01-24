@@ -25,6 +25,7 @@ class KaraokePlace < ActiveRecord::Base
   validates :name, :latitude, :longitude, presence: true
 
   acts_as_taggable
+  has_paper_trail
 
   searchkick word_middle: [:name], locations: ["location"]
 

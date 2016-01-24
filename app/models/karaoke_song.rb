@@ -15,4 +15,6 @@ class KaraokeSong < ActiveRecord::Base
   belongs_to :karaoke_machine, touch: true
 
   validates :key, :song, :karaoke_machine, presence: true
+
+  has_paper_trail
 end
