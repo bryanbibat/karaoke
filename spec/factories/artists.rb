@@ -15,6 +15,7 @@ FactoryGirl.define do
   factory :artist do
     name "MyString"
     description "MyText"
+    after(:create) { |m| m.update_attributes(tag_list: 'Japanese') }
   end
 
 end

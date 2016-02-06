@@ -21,6 +21,7 @@ FactoryGirl.define do
     description "MyText"
     released_at "2015-04-14"
     artist
+    after(:create) { |m| m.update_attributes(tag_list: 'Japanese') }
   end
 
 end

@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: franchises
+#
+#  id                 :integer          not null, primary key
+#  name               :string
+#  slug               :string
+#  description        :text
+#  karaoke_machine_id :integer
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
 class Franchise < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged

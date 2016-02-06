@@ -8,6 +8,8 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  slug        :string
+#  mark_text   :string
+#  mark_class  :string
 #
 
 class KaraokeMachine < ActiveRecord::Base

@@ -15,11 +15,15 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime
 #  updated_at             :datetime
+#  role                   :string
+#  name                   :string
 #
 
 FactoryGirl.define do
   factory :admin do
-    
+    email "admin@karaokepedia.com"
+    password "password"
+    password_confirmation "password"
+    role "admin"
   end
-
 end

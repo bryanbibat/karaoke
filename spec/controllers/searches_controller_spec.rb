@@ -38,7 +38,7 @@ RSpec.describe SearchesController, type: :controller do
     it "returns http success" do
       FactoryGirl.create(:song)
       Song.reindex
-      get :song, q: "test"
+      get :song, q: "MyString"
       expect(response).to have_http_status(:success)
     end
   end
@@ -47,7 +47,7 @@ RSpec.describe SearchesController, type: :controller do
     it "returns http success" do
       FactoryGirl.create(:artist)
       Artist.reindex
-      get :artist, q: "test"
+      get :artist, q: "MyString"
       expect(response).to have_http_status(:success)
     end
   end

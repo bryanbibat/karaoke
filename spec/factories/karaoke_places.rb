@@ -12,6 +12,7 @@
 #  updated_at         :datetime         not null
 #  slug               :string
 #  address            :string
+#  franchise_id       :integer
 #
 
 FactoryGirl.define do
