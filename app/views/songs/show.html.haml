@@ -1,6 +1,9 @@
 - build_meta_tags title: @song.name
 %h1= @song.name
 
+- if admin_signed_in?
+  = link_to "Edit", rails_admin.edit_path(model_name: "song", id: @song.id)
+
 %p
   %em= @song.original_name
 

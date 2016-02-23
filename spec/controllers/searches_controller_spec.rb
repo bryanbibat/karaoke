@@ -32,6 +32,20 @@ RSpec.describe SearchesController, type: :controller do
       get :show, q: "12345"
       expect(response.body).to match(/<td><a/)
     end
+
+    describe "Logged in as admin" do
+      it "returns http success" do
+        FactoryGirl.create(:song)
+        FactoryGirl.create(:karaoke_song)
+        KaraokePlace.reindex
+        Artist.reindex
+        Song.reindex
+        sign_in(FactoryGirl.create(:admin))
+
+        get :show, q: "MyString"
+        expect(response).to have_http_status(:success)
+      end
+    end
   end
 
   describe "GET #song" do

@@ -9,7 +9,11 @@
     %th Keys
   - songs.each do |song|
     %tr
-      %td= link_to song.name, song
+      %td
+        = link_to song.name, song
+        - if admin_signed_in?
+          %small
+            = link_to "edit", rails_admin.edit_path(model_name: "song", id: song.id)
       %td.hidden-xs= song.original_name
       - unless controller_name.eql? "artists"
         %td= link_to song.artist.name, song.artist
@@ -20,4 +24,7 @@
           = link_to k.karaoke_machine do
             %span.label{ class: "label-#{k.karaoke_machine.display_mark_class}"}= k.karaoke_machine.display_mark_text
           = k.key
+          - if admin_signed_in?
+            %small
+              = link_to "edit", rails_admin.edit_path(model_name: "karaoke_song", id: k.id)
           %br
