@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160124151107) do
+ActiveRecord::Schema.define(version: 20160223094401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,13 +100,15 @@ ActiveRecord::Schema.define(version: 20160124151107) do
     t.integer  "karaoke_machine_id"
     t.decimal  "latitude",           precision: 9, scale: 6
     t.decimal  "longitude",          precision: 9, scale: 6
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
     t.string   "slug"
     t.string   "address"
     t.integer  "franchise_id"
+    t.boolean  "active",                                     default: true
   end
 
+  add_index "karaoke_places", ["active"], name: "index_karaoke_places_on_active", using: :btree
   add_index "karaoke_places", ["franchise_id"], name: "index_karaoke_places_on_franchise_id", using: :btree
   add_index "karaoke_places", ["karaoke_machine_id"], name: "index_karaoke_places_on_karaoke_machine_id", using: :btree
   add_index "karaoke_places", ["slug"], name: "index_karaoke_places_on_slug", unique: true, using: :btree

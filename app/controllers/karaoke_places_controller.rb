@@ -1,6 +1,6 @@
 class KaraokePlacesController < ApplicationController
   def index
-    @bars = KaraokePlace.order(:name).includes(:karaoke_machine)
+    @bars = KaraokePlace.where(active: true).order(:name).includes(:karaoke_machine)
   end
 
   def show
