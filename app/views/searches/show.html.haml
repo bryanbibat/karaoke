@@ -16,7 +16,7 @@
 
 - unless @artists.last_page?
   %p.text-right
-    = link_to "View more results &raquo;".html_safe, artist_search_path(q: params[:q]), class: "btn btn-primary btn-sm"
+    = link_to "View more results &raquo;".html_safe, artist_search_path(q: params[:q]), class: "btn btn-warning btn-sm"
 
 %h2 Songs
 
@@ -24,4 +24,4 @@
 
 - unless @songs.last_page?
   %p.text-right
-    = link_to "View more results &raquo;".html_safe, song_search_path(q: params[:q]), class: "btn btn-primary btn-sm"
+    = link_to "View more results &raquo;".html_safe, song_search_path(q: params[:q]), class: "btn btn-warning btn-sm"
