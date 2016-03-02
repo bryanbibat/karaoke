@@ -1,3 +1,5 @@
 %h1= "Search Songs with \"#{params[:q]}\""
 
 = render partial: 'songs/search_table', locals: { songs: @songs }
+
+= paginate @songs
