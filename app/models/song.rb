@@ -36,6 +36,7 @@ class Song < ActiveRecord::Base
       description: description,
       original_name: original_name,
       notes: notes,
+      artist_name: artist.try(:name),
       song_keys: song_keys
     }
   end
