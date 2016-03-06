@@ -11,4 +11,4 @@ Solve the following problems:
 * Suggest songs when your group cannot decide what to sing
 * Provide numbers and lyrics to rare songs
 
-See also: http://www.meetup.com/J-Karaoke-Manila/
+See also: http://www.meetup.com/J-Karaoke-Manila/ and https://www.facebook.com/groups/JKaraokePH/
