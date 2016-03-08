@@ -1,0 +1,9 @@
+%h1= @article.title 
+
+#article_content= raw @article.content
+
+- content_for :stylesheets do
+  = raw @article.css
+
+- content_for :scripts do
+  = raw @article.js

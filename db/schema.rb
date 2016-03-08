@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223094401) do
+ActiveRecord::Schema.define(version: 20160308173702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,23 @@ ActiveRecord::Schema.define(version: 20160223094401) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "admin_id"
+    t.string   "slug"
+    t.text     "summary"
+    t.text     "content"
+    t.text     "js"
+    t.text     "css"
+    t.string   "thumbnail"
+    t.string   "status"
+    t.datetime "published_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "articles", ["admin_id"], name: "index_articles_on_admin_id", using: :btree
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -182,6 +199,7 @@ ActiveRecord::Schema.define(version: 20160223094401) do
   add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
   add_index "versions", ["transaction_id"], name: "index_versions_on_transaction_id", using: :btree
 
+  add_foreign_key "articles", "admins"
   add_foreign_key "franchises", "karaoke_machines"
   add_foreign_key "karaoke_places", "franchises"
   add_foreign_key "karaoke_places", "karaoke_machines"

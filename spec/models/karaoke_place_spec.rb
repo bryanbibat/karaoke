@@ -13,6 +13,7 @@
 #  slug               :string
 #  address            :string
 #  franchise_id       :integer
+#  active             :boolean          default(TRUE)
 #
 
 require 'rails_helper'

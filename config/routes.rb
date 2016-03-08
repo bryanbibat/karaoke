@@ -31,4 +31,6 @@ Rails.application.routes.draw do
       get 'place'
     end
   end
+
+  resources 'articles', only: :show
 end
