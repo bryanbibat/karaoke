@@ -1,6 +1,14 @@
 %h1= @article.title 
 
+#article_info
+  by
+  = @article.admin.name
+  on
+  = l @article.published_at, format: :long
+
 #article_content= raw @article.content
+
+= render 'pages/disqus_code'
 
 - content_for :stylesheets do
   = raw @article.css

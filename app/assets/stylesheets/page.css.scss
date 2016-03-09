@@ -38,3 +38,17 @@ footer, .footer {
   color: #fff;
   text-decoration: underline;
 }
+
+#article_info {
+  font-size: 90%;
+}
+
+#article_content {
+  margin-top: 20px;
+}
+
+@media (min-width: 960px) {
+  #article_content {
+    font-size: 120%;
+  }
+}
