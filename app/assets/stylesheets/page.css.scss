@@ -47,7 +47,7 @@ footer, .footer {
   margin-top: 20px;
 
   .table {
-    font-size: 1.5rem;
+    font-size: 85%;
   }
 }
 
@@ -56,5 +56,8 @@ footer, .footer {
     margin-top: 40px;
     font-size: 130%;
     p { margin-bottom: 14px }
+    .table {
+      font-size: 70%;
+    }
   }
 }
