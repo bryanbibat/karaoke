@@ -45,10 +45,14 @@ footer, .footer {
 
 #article_content {
   margin-top: 20px;
+
+  .table {
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 960px) {
   #article_content {
-    font-size: 120%;
+    font-size: 130%;
   }
 }
