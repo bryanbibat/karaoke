@@ -53,6 +53,8 @@ footer, .footer {
 
 @media (min-width: 960px) {
   #article_content {
+    margin-top: 40px;
     font-size: 130%;
+    p { margin-bottom: 14px }
   }
 }
