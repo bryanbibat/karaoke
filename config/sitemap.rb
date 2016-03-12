@@ -1,4 +1,4 @@
-SitemapGenerator::Sitemap.default_host = "http://karaoke.karaniwan.org"
+SitemapGenerator::Sitemap.default_host = "https://karaoke.karaniwan.org"
 
 SitemapGenerator::Sitemap.create do
   add about_path

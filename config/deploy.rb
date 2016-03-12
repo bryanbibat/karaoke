@@ -74,6 +74,7 @@ task :deploy => :environment do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
       queue "rm #{deploy_to}/#{current_path}/.ruby-version"
+      queue "cd #{deploy_to}/#{current_path} && rake sitemap:refresh"
     end
   end
 end
