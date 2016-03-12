@@ -24,6 +24,7 @@ FactoryGirl.define do
     karaoke_machine nil
     latitude "9.99"
     longitude "9.99"
+    active true
   end
 
 end

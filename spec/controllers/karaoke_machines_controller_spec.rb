@@ -23,6 +23,13 @@ RSpec.describe KaraokeMachinesController, type: :controller do
       get :ktvs, id: device.slug
       expect(response).to have_http_status(:success)
     end
+
+    it "should not return an inactive place" do
+      device = FactoryGirl.create(:karaoke_machine)
+      FactoryGirl.create(:karaoke_place, active: false, karaoke_machine: device)
+      get :ktvs, id: device.slug
+      expect(assigns[:device].karaoke_places).to be_empty
+    end
   end
 
   describe "GET #songs" do

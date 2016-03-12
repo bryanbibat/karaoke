@@ -4,8 +4,16 @@ RSpec.describe KaraokePlacesController, type: :controller do
 
   describe "GET #index" do
     it "returns http success" do
+      FactoryGirl.create(:karaoke_place)
       get :index
       expect(response).to have_http_status(:success)
+      expect(assigns[:bars]).to_not be_empty
+    end
+
+    it "should not return an inactive place" do
+      FactoryGirl.create(:karaoke_place, active: false)
+      get :index
+      expect(assigns[:bars]).to be_empty
     end
   end
 

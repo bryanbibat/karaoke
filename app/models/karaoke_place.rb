@@ -29,6 +29,8 @@ class KaraokePlace < ActiveRecord::Base
   acts_as_taggable
   has_paper_trail
 
+  default_scope -> { where(active: true) }
+
   searchkick word_middle: [:name], locations: ["location"]
 
   def search_data
