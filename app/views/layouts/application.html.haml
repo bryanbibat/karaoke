@@ -59,13 +59,15 @@
       .container
         %p
           &copy; 2015 - 2016
-          = link_to "Karaokepedia Team", "https://github.com/bryanbibat/karaoke"
+          = link_to "Karaokepedia Team", "http://meetup.com/J-Karaoke-Manila"
           %br
           Trademarks and copyrights are the property of their respective owners.
           %br
           Follow us for updates:
           = link_to icon('twitter'), "https://twitter.com/karaokepedia"
           = link_to icon('tumblr'), "http://karaokepedia.tumblr.com/"
+          = link_to icon('facebook'), "https://www.facebook.com/groups/JKaraokePH/"
+          = link_to icon('github'), "https://github.com/bryanbibat/karaoke"
     = yield :data_scripts
     = javascript_include_tag "application"
     = yield :scripts
