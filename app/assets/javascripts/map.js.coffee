@@ -6,5 +6,6 @@ if $("#map").length > 0
     ], zoom)
     L.tileLayer('https://osm.karaniwan.org/{z}/{x}/{y}.png',
       maxZoom: 18
+      minZoom: 2
       attribution: 'Map &copy; <a href="http://openstreetmap.org">OpenStreetMap contributors</a>'
     ).addTo window.Map
