@@ -17,6 +17,7 @@ RSpec.describe SearchesController, type: :controller do
       FactoryGirl.create(:karaoke_place)
       FactoryGirl.create(:song)
       FactoryGirl.create(:artist)
+      FactoryGirl.create(:article)
       KaraokePlace.reindex
       Article.reindex
       Artist.reindex
