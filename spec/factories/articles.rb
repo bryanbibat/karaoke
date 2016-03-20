@@ -26,5 +26,6 @@ FactoryGirl.define do
     thumbnail "MyString"
     status "MyString"
     published_at "2016-03-09 01:37:02"
+    content "MyString"
   end
 end

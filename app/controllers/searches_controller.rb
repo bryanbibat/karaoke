@@ -9,6 +9,7 @@ class SearchesController < ApplicationController
        @artists.any? { |a| a.tag_list.include? "Japanese" }
       j_karaoke_invite
     end
+    @articles = Article.highlighted_search params[:q]
   end
 
   def artist

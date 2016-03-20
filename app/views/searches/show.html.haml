@@ -25,3 +25,19 @@
 - unless @songs.last_page?
   %p.text-right
     = link_to "View more results &raquo;".html_safe, song_search_path(q: params[:q]), class: "btn btn-warning btn-sm"
+
+%h2 Articles
+
+- if @articles.empty?
+  %p
+    %em No articles found
+
+- else
+  - @articles.with_details.each do |article, details|
+    %h4= link_to article.title, article
+    %p
+      %small
+        %em
+          &hellip;
+          %span>= raw details[:highlight][:stripped_content]
+          &hellip;

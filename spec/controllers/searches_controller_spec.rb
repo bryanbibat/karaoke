@@ -8,6 +8,7 @@ RSpec.describe SearchesController, type: :controller do
       KaraokePlace.reindex
       Artist.reindex
       Song.reindex
+      Article.reindex
       get :show
       expect(response).to have_http_status(:success)
     end
@@ -17,6 +18,7 @@ RSpec.describe SearchesController, type: :controller do
       FactoryGirl.create(:song)
       FactoryGirl.create(:artist)
       KaraokePlace.reindex
+      Article.reindex
       Artist.reindex
       Song.reindex
       get :show, q: "MyString"
@@ -27,6 +29,7 @@ RSpec.describe SearchesController, type: :controller do
       FactoryGirl.create(:song)
       FactoryGirl.create(:karaoke_song)
       KaraokePlace.reindex
+      Article.reindex
       Artist.reindex
       Song.reindex
       get :show, q: "12345"
@@ -38,6 +41,7 @@ RSpec.describe SearchesController, type: :controller do
         FactoryGirl.create(:song)
         FactoryGirl.create(:karaoke_song)
         KaraokePlace.reindex
+        Article.reindex
         Artist.reindex
         Song.reindex
         sign_in(FactoryGirl.create(:admin))
