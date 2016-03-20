@@ -1,6 +1,16 @@
 - if @artists.empty?
   %p
-    %em No artists found
+    %em
+      No artists found.
+      You can request for
+      %strong Japanese artists
+      with the
+      = link_to "Request Info", request_info_path
+      form.
+      %br
+      We are not accepting requests for
+      %strong OPM, English, K-Pop or C-Pop
+      artists at the moment.
 
 - else 
   %table.table.table-striped.table-condensed

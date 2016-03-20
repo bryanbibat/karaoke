@@ -1,30 +1,45 @@
-%table.table.table-striped
-  %tr
-    %th Name
-    %th.hidden-xs Alternative/Original Name
-    - unless controller_name.eql? "artists"
-      %th Artist
-    %th.hidden-xs Notes
-    %th.visible-md-block.visible-lg-block Release Date
-    %th Keys
-  - songs.each do |song|
+- if songs.empty?
+  %p
+    %em
+      No songs found.
+      You can request for
+      %strong Japanese songs
+      with the
+      = link_to "Request Info", request_info_path
+      form.
+      %br
+      We are not accepting requests for
+      %strong OPM, English, K-Pop or C-Pop
+      songs at the moment.
+
+- else
+  %table.table.table-striped
     %tr
-      %td
-        = link_to song.name, song
-        - if admin_signed_in?
-          %small
-            = link_to "edit", rails_admin.edit_path(model_name: "song", id: song.id)
-      %td.hidden-xs= song.original_name
+      %th Name
+      %th.hidden-xs Alternative/Original Name
       - unless controller_name.eql? "artists"
-        %td= link_to song.artist.name, song.artist
-      %td.hidden-xs= song.notes
-      %td.visible-md-block.visible-lg-block= song.released_at
-      %td
-        - song.karaoke_songs.sort_by { |k| k.karaoke_machine.name }.each do |k|
-          = link_to k.karaoke_machine do
-            %span.label{ class: "label-#{k.karaoke_machine.display_mark_class}"}= k.karaoke_machine.display_mark_text
-          = k.key
+        %th Artist
+      %th.hidden-xs Notes
+      %th.visible-md-block.visible-lg-block Release Date
+      %th Keys
+    - songs.each do |song|
+      %tr
+        %td
+          = link_to song.name, song
           - if admin_signed_in?
             %small
-              = link_to "edit", rails_admin.edit_path(model_name: "karaoke_song", id: k.id)
-          %br
+              = link_to "edit", rails_admin.edit_path(model_name: "song", id: song.id)
+        %td.hidden-xs= song.original_name
+        - unless controller_name.eql? "artists"
+          %td= link_to song.artist.name, song.artist
+        %td.hidden-xs= song.notes
+        %td.visible-md-block.visible-lg-block= song.released_at
+        %td
+          - song.karaoke_songs.sort_by { |k| k.karaoke_machine.name }.each do |k|
+            = link_to k.karaoke_machine do
+              %span.label{ class: "label-#{k.karaoke_machine.display_mark_class}"}= k.karaoke_machine.display_mark_text
+            = k.key
+            - if admin_signed_in?
+              %small
+                = link_to "edit", rails_admin.edit_path(model_name: "karaoke_song", id: k.id)
+            %br
