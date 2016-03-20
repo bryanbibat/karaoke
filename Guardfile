@@ -41,7 +41,7 @@ guard 'livereload' do
   watch(%r{(app|vendor)(/assets/\w+/(.+\.(scss|css|coffee|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}" }
 end
 
-guard 'puma', port: 3000 do
+guard 'puma', port: 3000, bind: 'tcp://0.0.0.0' do
   watch('Gemfile.lock')
   watch(%r{^config|lib|api/.*})
 end
