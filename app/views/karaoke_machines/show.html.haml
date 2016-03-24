@@ -1,10 +1,13 @@
 - build_meta_tags title: @device.name
+
+%div{:class => "alert alert-info"}
+  This is a work in progress. You can help by submitting your favorite karaoke places that use this machine <a href="/submit_info">here</a>.
+
 %h1= @device.name 
 
 = raw @device.description_html
 
-%p= link_to "List of songs in this machine &raquo;".html_safe, songs_karaoke_machine_path(@device), class: "btn btn-default btn-lg"
-
+%p= link_to "Partial list of songs in this machine &raquo;".html_safe, songs_karaoke_machine_path(@device), class: "btn btn-default btn-lg"
 
 %h3 KTVs using this machine
 #map{ style: "height: 400px" }

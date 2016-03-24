@@ -18,17 +18,17 @@ footer, .footer {
     color: #87BEE0;
   }
 }
-.css1 { 
-  font-size: 1.0em; 
+.css1 {
+  font-size: 1.0em;
 }
 .css2 {
-  font-size: 1.3em; 
+  font-size: 1.3em;
 }
-.css3 { 
-  font-size: 1.6em; 
+.css3 {
+  font-size: 1.6em;
 }
-.css4 { 
-  font-size: 2.0em; 
+.css4 {
+  font-size: 2.0em;
 }
 .form-control.long-inline {
   width: 250px;
@@ -37,6 +37,17 @@ footer, .footer {
 .alert a {
   color: #fff;
   text-decoration: underline;
+}
+
+.articles_index {
+
+  h2 {
+    margin-bottom: 5px;
+  }
+
+  #details {
+    font-size: 85%;
+  }
 }
 
 #article_info {
@@ -52,6 +63,19 @@ footer, .footer {
 }
 
 @media (min-width: 960px) {
+  h1 {
+    font-size: 50px;
+  }
+  .articles_index {
+    font-size: 130%;
+    #details {
+      font-size: 80%;
+    }
+    h2 {
+      font-size: 40px;
+    }
+  }
+
   #article_content {
     margin-top: 40px;
     font-size: 130%;
@@ -60,4 +84,8 @@ footer, .footer {
       font-size: 70%;
     }
   }
+}
+
+.breadcrumb > li + li:before {
+    content: "> ";
 }

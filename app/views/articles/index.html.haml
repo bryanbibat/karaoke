@@ -1,0 +1,20 @@
+- build_meta_tags title: "Articles"
+
+%h1 Articles
+
+- @articles.each do |article|
+
+  %h2= article.title
+
+  %p#details
+    by
+    = article.admin.name
+    on
+    = l article.published_at, format: :short
+
+  - if article.summary.present?
+    %p= article.summary
+
+  %p= link_to "Read more...", article
+
+= paginate @articles

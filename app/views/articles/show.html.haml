@@ -1,5 +1,10 @@
 - build_meta_tags title: @article.title, description: @article.summary
 
+%ol.breadcrumb
+  %li= link_to "Articles", articles_path
+  %li= link_to @article.title, @article
+
+
 %h1= @article.title 
 
 #article_info

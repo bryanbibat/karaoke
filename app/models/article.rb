@@ -25,6 +25,8 @@ class Article < ActiveRecord::Base
   has_paper_trail
   acts_as_taggable
 
+  paginates_per 7
+
   searchkick highlight: [:stripped_content]
 
   def search_data

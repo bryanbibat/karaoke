@@ -32,5 +32,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources 'articles', only: :show
+  resources 'articles', only: [:index, :show]
 end

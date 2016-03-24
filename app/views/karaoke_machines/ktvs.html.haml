@@ -1,4 +1,7 @@
-- build_meta_tags title: "Karaoke Machines"
+- build_meta_tags title: @device.name
+
+%div{:class => "alert alert-info"}
+  This is a work in progress. You can help by submitting your favorite karaoke places that use this machine <a href="/submit_info">here</a>.
 #map{ style: "height: 400px" }
 %h1
   = link_to @device.name, @device

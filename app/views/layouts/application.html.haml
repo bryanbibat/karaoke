@@ -36,8 +36,9 @@
                 %li{ :class => (controller_name == "tags" ? "active" : "") }= link_to "Tags", tags_url
           
           %ul.nav.navbar-nav.navbar-left
-            %li{ :class => (action_name == "submit_info" ? "active" : "") }= link_to "Submit Info", submit_info_path
             %li{ :class => (action_name == "request_info" ? "active" : "") }= link_to "Request Info", request_info_path
+            %li{ :class => (action_name == "submit_info" ? "active" : "") }= link_to "Submit Info", submit_info_path
+            %li{ :class => (controller_name == "articles" ? "active" : "") }= link_to "Articles", articles_path
             %li{ :class => (action_name == "about" ? "active" : "") }= link_to "About", about_path
 
           = form_tag search_url, method: :get,  class: "navbar-form navbar-right" do
@@ -53,7 +54,7 @@
           %a.close{"data-dismiss" => "alert"} ×
           = msg
       .row
-        .col-sm-12
+        .col-sm-12{ class: "#{controller_name}_#{action_name}" }
           = yield
     %footer
       .container
