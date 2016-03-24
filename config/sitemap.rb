@@ -28,4 +28,10 @@ SitemapGenerator::Sitemap.create do
   Song.all.each do |song|
     add song_path(song), :lastmod => song.updated_at
   end
+
+  add articles_path, :priority => 0.7, :changefreq => 'daily'
+
+  Article.all.each do |article|
+    add article_path(article), :lastmod => article.updated_at
+  end
 end
