@@ -52,12 +52,6 @@
 
       %h4= link_to @article.title, @article
 
-      %p#details
-        by
-        = @article.admin.name
-        on
-        = l @article.published_at, format: :short
-
       - if @article.summary.present?
         %p= @article.summary
 
