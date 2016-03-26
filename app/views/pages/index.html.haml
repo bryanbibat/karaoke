@@ -1,5 +1,4 @@
 - build_meta_tags
-#map{ style: "height: 400px" }
 %h1.text-center
   = Rails.application.config.title
   (beta)
@@ -7,27 +6,67 @@
   %em because karaoke is more than
   "Let it Go"
   %em on endless repeat
+
+.row
+  .col-md-4
+    %h3 Latest Songs
+    %table.table.table-striped.table-condensed
+      %tr
+        %th Name
+        %th Artist
+        %th Key
+      - @keys.each do |k|
+        %tr
+          %td= link_to k.song.name, k.song
+          %td= link_to k.song.artist.name, k.song.artist
+          %td
+            %span.label{ class: "label-#{k.karaoke_machine.display_mark_class}"}= k.karaoke_machine.display_mark_text
+            = k.key
+
+    %p.text-center= link_to "Browse songs &raquo;".html_safe, songs_path, class: "btn btn-primary btn-sm"
+
+  .col-md-4
+    %h3 Latest Artists
+
+    %table.table.table-striped.table-condensed
+      %tr
+        %th Name
+        %th Tags
+      - @artists.each do |artist|
+        %tr
+          %td= link_to artist.name, artist
+          %td
+            - artist.tag_list.each_with_index do |tag, i|
+              = link_to(tag, tag_path(tag)) + (i < artist.tag_list.length - 1 ? ', ' : '')
+
+    %p.text-center= link_to "Browse artists &raquo;".html_safe, artists_path, class: "btn btn-primary btn-sm"
+
+  .col-md-4
+    %h3 Latest Article
+
+    - if @article.present?
+
+      %h4= link_to @article.title, @article
+
+      %p#details
+        by
+        = @article.admin.name
+        on
+        = l @article.published_at, format: :short
+
+      - if @article.summary.present?
+        %p= @article.summary
+
+      %p.text-center= link_to "Browse articles &raquo;".html_safe, articles_path, class: "btn btn-primary btn-sm"
+    - else
+
+      %p No articles yet
+
+
+%hr
 %p.text-center
   = link_to "Find KTVs close to me &raquo;".html_safe, about_path, class: "btn btn-default", id: "geoloc"
 %p.text-center
   = link_to "Learn more about this site and how you can contribute &raquo;".html_safe, about_path, class: "btn btn-default btn-sm"
 
 
-- content_for :scripts do
-  :javascript
-    window.setupMap(13, 122, 5);
-    var data = JSON.parse("#{escape_javascript KaraokePlace.all.to_json(only: [:name, :latitude, :longitude, :slug])}")
-    for (var i = 0; i < data.length; i++) {
-      L.marker([ data[i]["latitude"], data[i]["longitude"]])
-        .addTo(window.Map)
-        .bindPopup("<strong><a href='#{karaoke_places_url}/" + data[i]["slug"] + "'>" + data[i]["name"] + "</a></strong>");
-    }
-
-    var geolocateKTVs = function(position) {
-      window.location = "#{geolocate_url}" + "?lat=" + position.coords.latitude + "&long=" + position.coords.longitude;
-    }
-
-    $("#geoloc").click(function() {
-      navigator.geolocation.getCurrentPosition(geolocateKTVs);
-      return false;
-    });
