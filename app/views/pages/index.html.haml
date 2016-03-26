@@ -8,7 +8,7 @@
   %em on endless repeat
 
 .row
-  .col-md-4
+  .col-md-6
     %h3 Latest Songs
     %table.table.table-striped.table-condensed
       %tr
@@ -25,23 +25,26 @@
 
     %p.text-center= link_to "Browse songs &raquo;".html_safe, songs_path, class: "btn btn-primary btn-sm"
 
-  .col-md-4
+  .col-md-6
     %h3 Latest Artists
 
     %table.table.table-striped.table-condensed
       %tr
         %th Name
+        %th Alt Name
         %th Tags
       - @artists.each do |artist|
         %tr
           %td= link_to artist.name, artist
+          %td= artist.original_name
           %td
             - artist.tag_list.each_with_index do |tag, i|
               = link_to(tag, tag_path(tag)) + (i < artist.tag_list.length - 1 ? ', ' : '')
 
     %p.text-center= link_to "Browse artists &raquo;".html_safe, artists_path, class: "btn btn-primary btn-sm"
 
-  .col-md-4
+.row
+  .col-md-6.col-md-offset-3
     %h3 Latest Article
 
     - if @article.present?
