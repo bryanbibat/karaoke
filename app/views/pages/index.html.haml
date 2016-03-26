@@ -22,7 +22,7 @@
           %td
             = link_to k.karaoke_machine do
               %span.label{ class: "label-#{k.karaoke_machine.display_mark_class}"}= k.karaoke_machine.display_mark_text
-            = k.key
+              = k.key
 
     %p.text-center= link_to "Browse songs &raquo;".html_safe, songs_path, class: "btn btn-primary btn-sm"
 
