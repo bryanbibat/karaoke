@@ -20,7 +20,8 @@
           %td= link_to k.song.name, k.song
           %td= link_to k.song.artist.name, k.song.artist
           %td
-            %span.label{ class: "label-#{k.karaoke_machine.display_mark_class}"}= k.karaoke_machine.display_mark_text
+            = link_to k.karaoke_machine do
+              %span.label{ class: "label-#{k.karaoke_machine.display_mark_class}"}= k.karaoke_machine.display_mark_text
             = k.key
 
     %p.text-center= link_to "Browse songs &raquo;".html_safe, songs_path, class: "btn btn-primary btn-sm"
