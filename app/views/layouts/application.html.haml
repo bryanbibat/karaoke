@@ -34,10 +34,11 @@
                 %li{ :class => (controller_name == "artists" ? "active" : "") }= link_to "Artists", artists_url
                 %li{ :class => (controller_name == "songs" ? "active" : "") }= link_to "Songs", songs_url
                 %li{ :class => (controller_name == "tags" ? "active" : "") }= link_to "Tags", tags_url
+                %li.divider{ :role => 'separator' }
+                %li{ :class => (action_name == "submit_info" ? "active" : "") }= link_to "Submit Info", submit_info_path
           
           %ul.nav.navbar-nav.navbar-left
             %li{ :class => (action_name == "request_info" ? "active" : "") }= link_to "Request Info", request_info_path
-            %li{ :class => (action_name == "submit_info" ? "active" : "") }= link_to "Submit Info", submit_info_path
             %li{ :class => (controller_name == "articles" ? "active" : "") }= link_to "Articles", articles_path
             %li{ :class => (action_name == "about" ? "active" : "") }= link_to "About", about_path
 
