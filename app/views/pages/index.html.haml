@@ -32,12 +32,12 @@
     %table.table.table-striped.table-condensed
       %tr
         %th Name
-        %th Alt Name
+        %th.hidden-md Alt Name
         %th Tags
       - @artists.each do |artist|
         %tr
           %td= link_to artist.name, artist
-          %td= artist.original_name
+          %td.hidden-md= artist.original_name
           %td
             - artist.tag_list.each_with_index do |tag, i|
               = link_to(tag, tag_path(tag)) + (i < artist.tag_list.length - 1 ? ', ' : '')
