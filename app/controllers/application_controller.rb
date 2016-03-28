@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
   end
 
   def j_karaoke_invite
-    flash.now[:danger] = "Vote now for the schedule for the April 2016 Japanese Karaoke session at the <a href='https://www.facebook.com/groups/JKaraokePH/'>JKaraokePH Facebook Group</a>!".html_safe
+    flash.now[:info] = "<a href='https://www.facebook.com/groups/JKaraokePH/'>Join our Facebook Group</a> to learn more about Japanese music karaoke in the Philippines!".html_safe
   end
 end
