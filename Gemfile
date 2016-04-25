@@ -66,6 +66,6 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'spring-commands-rspec'
-  gem 'annotate', '~> 2.6.6'
+  gem 'annotate', '~> 2.7.0'
   gem 'web-console', '~> 3.0'
 end
