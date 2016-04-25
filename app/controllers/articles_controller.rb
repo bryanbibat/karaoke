@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    j_karaoke_invite
     @article = Article.friendly.find(params[:id])
   end
 end
