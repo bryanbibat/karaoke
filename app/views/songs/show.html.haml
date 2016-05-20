@@ -18,6 +18,10 @@
   %p= @song.notes
 
 %p
+  Release date:
+  = l @song.released_at
+
+%p
   Tags:
   - @song.tag_list.each_with_index do |tag, i|
     = link_to(tag, song_tag_path(tag)) + (i < @song.tag_list.length - 1 ? ', ' : '')
