@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.2.5'
-gem 'nokogiri', '~> 1.6.7.rc4'
+gem 'rails', '~> 4.2.6'
+gem 'nokogiri'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'closure-compiler'
