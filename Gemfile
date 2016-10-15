@@ -8,10 +8,11 @@ gem 'closure-compiler'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
+gem 'net-http-persistent'
 
 gem 'haml'
 
-gem 'rails_admin'
+gem 'rails_admin', '~> 0.8.1'
 gem 'acts-as-taggable-on'
 gem 'rails_admin_tag_list'
 gem 'devise'
