@@ -3,7 +3,7 @@ class SongsController < ApplicationController
     @songs = Song.includes(:artist, :karaoke_machines).order(:name).page params[:page]
     if params[:initial].present?
       if valid_initial
-        @songs = @songs.where("name like '#{params[:initial]}%'")
+        @songs = @songs.where("name ilike '#{params[:initial]}%'")
       else
         redirect_to songs_path
       end

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.2.6'
+gem 'rails', '~> 4.2.8'
 gem 'nokogiri'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -56,7 +56,6 @@ group :development, :test do
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
   gem 'shoulda-matchers', :require => false
-  gem 'did_you_mean', '~> 0.10.0'
   gem 'pry'
   gem 'pry-byebug'
 end
