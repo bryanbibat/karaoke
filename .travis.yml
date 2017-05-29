@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.2.5
+  - 2.3
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
@@ -8,7 +8,6 @@ script:
 before_script:
   - cp config/database.travis.yml config/database.yml
   - psql -c 'create database travis_ci_test' -U postgres
-addons:
-  postgresql: "9.3"
 services:
+  - postgresql
   - elasticsearch
