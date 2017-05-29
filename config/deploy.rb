@@ -14,13 +14,15 @@ set :domain, 'bryanbibat.net'
 set :deploy_to, '/home/bry/mina/karaoke'
 set :repository, 'https://github.com/bryanbibat/karaoke.git'
 set :branch, 'master'
+set :rails_env, 'production'
 
 # For system-wide RVM install.
 #   set :rvm_path, '/usr/local/rvm/bin/rvm'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'config/secrets.yml', 'log']
+set :shared_files, fetch(:shared_files, []) + ['config/database.yml', 'config/secrets.yml']
+set :shared_dirs, fetch(:shared_dirs, []) + ['log']
 
 # Optional settings:
 #   set :user, 'foobar'    # Username in the server to SSH to.
@@ -42,20 +44,20 @@ end
 # For Rails apps, we'll make some of the shared paths that are shared between
 # all releases.
 task :setup => :environment do
-  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/pids"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/pids"]
+  command %[mkdir -p "#{deploy_to}/#{shared_path}/pids"]
+  command %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/pids"]
 
-  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/log"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/log"]
+  command %[mkdir -p "#{deploy_to}/#{shared_path}/log"]
+  command %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/log"]
 
-  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/config"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/config"]
+  command %[mkdir -p "#{deploy_to}/#{shared_path}/config"]
+  command %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/config"]
 
-  queue! %[touch "#{deploy_to}/#{shared_path}/config/database.yml"]
-  queue  %[echo "-----> Be sure to edit '#{deploy_to}/#{shared_path}/config/database.yml'."]
+  command %[touch "#{deploy_to}/#{shared_path}/config/database.yml"]
+  command  %[echo "-----> Be sure to edit '#{deploy_to}/#{shared_path}/config/database.yml'."]
 
-  queue! %[touch "#{deploy_to}/#{shared_path}/config/secrets.yml"]
-  queue  %[echo "-----> Be sure to edit '#{deploy_to}/#{shared_path}/config/secrets.yml'."]
+  command %[touch "#{deploy_to}/#{shared_path}/config/secrets.yml"]
+  command  %[echo "-----> Be sure to edit '#{deploy_to}/#{shared_path}/config/secrets.yml'."]
 end
 
 desc "Deploys the current version to the server."
@@ -70,11 +72,11 @@ task :deploy => :environment do
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
-    to :launch do
-      queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
-      queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
-      queue "rm #{deploy_to}/#{current_path}/.ruby-version"
-      queue "#{rake} -s sitemap:refresh"
+    on :launch do
+      command "mkdir -p tmp/"
+      command "touch tmp/restart.txt"
+      command "rm .ruby-version"
+      invoke :rake, "-s sitemap:refresh"
     end
   end
 end
