@@ -1,4 +1,6 @@
 class KaraokeMachinesController < ApplicationController
+  before_action :j_karaoke_invite
+
   def index
     @devices = KaraokeMachine.order(:name).all
   end

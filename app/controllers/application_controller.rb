@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def j_karaoke_invite
+    flash.now[:warning] = "This site has been deprecated. <a href='https://www.awitotaku.com/'>Proceed to Awit Otaku</a>".html_safe
     flash.now[:info] = "Join our Japanese Karaoke Facebook group! <a href='https://www.facebook.com/groups/JKaraokePH/'>Sign up here</a>".html_safe
   end
 end

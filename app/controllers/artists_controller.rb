@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
   def index
+    j_karaoke_invite
     @artists = Artist.order(:name).page params[:page]
     if params[:initial].present?
       if valid_initial

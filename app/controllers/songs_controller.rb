@@ -1,5 +1,6 @@
 class SongsController < ApplicationController
   def index
+    j_karaoke_invite
     @songs = Song.includes(:artist, :karaoke_machines).order(:name).page params[:page]
     if params[:initial].present?
       if valid_initial
