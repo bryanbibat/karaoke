@@ -25,29 +25,6 @@
         .navbar-collapse.collapse
           %ul.nav.navbar-nav
             %li{ :class => ((controller_name == "pages" && action_name == "index") ? "active" : "") }= link_to "Home", root_url
-            %li.dropdown
-              = link_to "#", class: "dropdown-toggle", "data-toggle" => "dropdown" do
-                Database
-                %span.caret
-              %ul.dropdown-menu
-                %li{ :class => (controller_name == "karaoke_places" ? "active" : "") }= link_to "KTVs", karaoke_places_url
-                %li{ :class => (controller_name == "artists" ? "active" : "") }= link_to "Artists", artists_url
-                %li{ :class => (controller_name == "songs" ? "active" : "") }= link_to "Songs", songs_url
-                %li{ :class => (controller_name == "tags" ? "active" : "") }= link_to "Tags", tags_url
-                %li.divider{ :role => 'separator' }
-                %li{ :class => (action_name == "submit_info" ? "active" : "") }= link_to "Submit Info", submit_info_path
-          
-          %ul.nav.navbar-nav.navbar-left
-            %li{ :class => (action_name == "request_info" ? "active" : "") }= link_to "Request Info", request_info_path
-            %li{ :class => (controller_name == "articles" ? "active" : "") }= link_to "Articles", articles_path
-            %li{ :class => (action_name == "about" ? "active" : "") }= link_to "About", about_path
-
-          = form_tag search_url, method: :get,  class: "navbar-form navbar-right" do
-            .form-group
-              = text_field_tag "q", "", class: "form-control", placeholder: "Search"
-              %button{ type: "submit", class: "btn btn-default"}
-                %span.glyphicon.glyphicon-search
-
 
     .container.main-container
       - flash.each do |name, msg|
@@ -60,8 +37,9 @@
     %footer
       .container
         %p
-          &copy; 2015 - 2016
-          = link_to "Karaokepedia Team", "http://meetup.com/J-Karaoke-Manila"
+          &copy; 2015 -
+          = Date.today.year
+          = link_to "Karaokepedia Team", "https://www.facebook.com/groups/JKaraokePH/"
           %br
           Trademarks and copyrights are the property of their respective owners.
           %br

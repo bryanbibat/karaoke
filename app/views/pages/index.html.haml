@@ -1,70 +1,13 @@
 - build_meta_tags
 %h1.text-center
   = Rails.application.config.title
-  (beta)
+  (deprecated)
+
+%p.text-center{ style: "padding-top: 40px" }
+  Thank you for participating in the beta.
 %p.text-center
-  %em because karaoke is more than
-  "Let it Go"
-  %em on endless repeat
-
-.row
-  .col-md-6
-    %h3 Latest Songs
-    %table.table.table-striped.table-condensed
-      %tr
-        %th Name
-        %th Artist
-        %th Key
-      - @keys.each do |k|
-        %tr
-          %td= link_to k.song.name, k.song
-          %td= link_to k.song.artist.name, k.song.artist
-          %td
-            = link_to k.karaoke_machine do
-              %span.label{ class: "label-#{k.karaoke_machine.display_mark_class}"}= k.karaoke_machine.display_mark_text
-              = k.key
-
-    %p.text-center= link_to "Browse songs &raquo;".html_safe, songs_path, class: "btn btn-primary btn-sm"
-
-  .col-md-6
-    %h3 Latest Artists
-
-    %table.table.table-striped.table-condensed
-      %tr
-        %th Name
-        %th.hidden-md Alt Name
-        %th Tags
-      - @artists.each do |artist|
-        %tr
-          %td= link_to artist.name, artist
-          %td.hidden-md= artist.original_name
-          %td
-            - artist.tag_list.each_with_index do |tag, i|
-              = link_to(tag, tag_path(tag)) + (i < artist.tag_list.length - 1 ? ', ' : '')
-
-    %p.text-center= link_to "Browse artists &raquo;".html_safe, artists_path, class: "btn btn-primary btn-sm"
-
-.row
-  .col-md-6.col-md-offset-3
-    %h3 Latest Article
-
-    - if @article.present?
-
-      %h4= link_to @article.title, @article
-
-      - if @article.summary.present?
-        %p= @article.summary
-
-      %p.text-center= link_to "Browse articles &raquo;".html_safe, articles_path, class: "btn btn-primary btn-sm"
-    - else
-
-      %p No articles yet
+  Based on your input, we've created a J-music centric site to replace this site:
 
 
-%hr
 %p.text-center
-  = link_to "Find KTVs close to me &raquo;".html_safe, about_path, class: "btn btn-default", id: "geoloc"
-%p.text-center
-  = link_to "Learn more about this site and how you can contribute &raquo;".html_safe, about_path, class: "btn btn-default btn-sm"
-
-
+  = link_to "Proceed to Awit Otaku", "https://www.awitotaku.com"
